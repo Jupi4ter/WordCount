@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 
 namespace WordCount
 {
@@ -112,6 +113,7 @@ namespace WordCount
         }
         public string[] CountTimes()
         {
+            dictionary = dictionary.OrderBy(p => p.Value).ToDictionary(o => o.Key, p => p.Value);
             int temp = 0;
             //计数器计算string的下标
             int j = 0;
