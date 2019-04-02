@@ -1,22 +1,63 @@
-//功能：计算ASCII字符
-//参数：字符串
-//参数类型:string
-//返回：字符串中的字符个数
-//返回类型：int
-//接口定义：    
-    public interface ICountAscii
-    {
-        int CountAscii(string txtString);
-    } 
+// Function: Computing ASCII characters
 
 
-//功能：计算有效行数
-//参数：文件路径
-//参数类型:string
-//返回：有效行数
-//返回类型：int
-//接口定义：
-    public interface ICountLine
-    {
-        int CountLine(string txtPathString);
-    }
+// Parameter: File path
+
+
+// Parameter type: string
+
+
+// Return: Number of characters in a string
+
+
+// Return type: int
+
+
+// Interface definitions:
+
+
+
+Public interface ICount Ascii
+
+
+{
+
+    Int CountAscii (string txtString);
+
+
+}
+
+
+
+
+
+
+// Function: Calculate the number of valid rows
+
+
+// Parameter: File path
+
+
+// Parameter type: string
+
+
+// Return: Number of valid rows
+
+
+// Return type: int
+
+
+// Interface definitions:
+
+
+
+Public interface ICountLine
+
+
+{
+    
+
+Int CountLine (string txtPathString);
+
+
+}
