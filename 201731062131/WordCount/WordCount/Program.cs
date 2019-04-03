@@ -113,6 +113,7 @@ namespace WordCount
         }
         public string[] CountTimes()
         {
+            //字典排序
             dictionary = dictionary.OrderBy(p => p.Value).ToDictionary(o => o.Key, p => p.Value);
             int temp = 0;
             //计数器计算string的下标
