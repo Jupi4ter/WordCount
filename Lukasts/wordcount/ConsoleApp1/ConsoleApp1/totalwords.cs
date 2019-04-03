@@ -8,10 +8,10 @@ using System.Net;
 using System.IO;
 
 
-namespace ConsoleApp28
+namespace wordcount
 {
-    public class Class1
-        
+    public class totalwords
+
     {
         public static bool IsLetter(string str)
         {
@@ -21,12 +21,11 @@ namespace ConsoleApp28
         }//判断字符串是否为英文
         public static Dictionary<string, int> CountWords(string text)
         {
-            Dictionary<string, int> fre;         
-            fre = new Dictionary<string, int>();            
-                string[] words = Regex.Split(text, @"\W+");
+            Dictionary<string, int> fre;
+            fre = new Dictionary<string, int>();
+            string[] words = Regex.Split(text, @"\W+");
             foreach (string word in words)
             {
-                //char[] c = word.ToCharArray();
                 if (word.Length > 3)
                 {
                     string word_4 = word.Substring(0, 4);//得到前四个字符
@@ -51,23 +50,17 @@ namespace ConsoleApp28
         {
             using (StreamReader sw = new StreamReader(failname, true))
             {
-                string text = sw.ReadToEnd();               
+                string text = sw.ReadToEnd();
                 Dictionary<string, int> fre = CountWords(text);
                 int Total_Words = 0;
-               /* for (total = 0; total < entry.Key.Length; total++)
-                {
-                    total++;
-                }
-                Console.WriteLine("{0}", total);*/
                 foreach (KeyValuePair<string, int> entry in fre)
                 {
                     Total_Words = Total_Words + entry.Value;
-                    //Console.WriteLine("{0}", entry.Key.Length);
-                  //Console.WriteLine("{0}:{1}", entry.Key, entry.Value);
                 }
                 Console.WriteLine("total wods:{0}", Total_Words);
             }
         }
-            
+
     }
 }
+

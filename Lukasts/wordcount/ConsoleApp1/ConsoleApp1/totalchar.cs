@@ -6,28 +6,23 @@ using System.Threading.Tasks;
 using System.Net;
 using System.IO;
 
-namespace ConsoleApp28
+namespace wordcount
 {
-    class Class3
+    class totalchar
     {
         public static int CharactersNum(string failname)
         {
-            int Char_Num =0;
+            int Char_Num = 0;
             using (StreamReader sw = new StreamReader(failname, true))
             {
                 string text = sw.ReadToEnd();
                 char[] everychar = text.ToCharArray();
-                //string pattern = @"^[\u4e00-\u9fa5]+$";
-                //char[] a = pattern.ToCharArray();
                 for (int i = 0; i < everychar.Length; i++)
                 {
                     if ((int)everychar[i] < 128)
                     {
                         Char_Num++;
-                    }//判断非汉字字符总数
-                    //for (int j = 0; j < a.Length; j++)
-                    //{
-                    //}
+                    }//判断非汉字字符总数                    
                 }
             }
             return Char_Num;
@@ -38,3 +33,4 @@ namespace ConsoleApp28
         }
     }
 }
+
