@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.489
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordTimesNamespace", "WordTimesNamespace\WordTimesNamespace.csproj", "{06D51934-2587-47FB-8F11-05A7C2C0F5E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordTimesUnitTest", "WordTimesUnitTest\WordTimesUnitTest.csproj", "{DDECC7CA-1C36-46C7-8B13-C5DFFB02F221}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06D51934-2587-47FB-8F11-05A7C2C0F5E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06D51934-2587-47FB-8F11-05A7C2C0F5E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06D51934-2587-47FB-8F11-05A7C2C0F5E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06D51934-2587-47FB-8F11-05A7C2C0F5E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDECC7CA-1C36-46C7-8B13-C5DFFB02F221}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDECC7CA-1C36-46C7-8B13-C5DFFB02F221}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDECC7CA-1C36-46C7-8B13-C5DFFB02F221}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDECC7CA-1C36-46C7-8B13-C5DFFB02F221}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3F9333AA-FB95-4377-8897-AAF9C2205CD4}
+	EndGlobalSection
+EndGlobal
