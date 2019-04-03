@@ -1,63 +1,35 @@
-// Function: Computing ASCII characters
+    // Function: Computing ASCII characters
+    // Parameter: File path
+    // Parameter type: string
+    // Return: Number of characters 
+    // Return type: int
+    // class name:CountASCII
+    // Interface definitions:
+    public interface ICountAscii
+    {
+        int CountAscii(string txtPathString);
+    }
 
+    // Function: Computing the number of  effectiveRowNumber 
+    // Parameter: File path
+    // Parameter type: string
+    // Return: Number of  effectiveRowNumber 
+    // Return type: int
+    // Class name: CountLINE
+    // Interface definitions:
+    public interface ICountLineAndCharacters
+    {
+        int CountLine(string txtPathString);
+    }
 
-// Parameter: File path
-
-
-// Parameter type: string
-
-
-// Return: Number of characters in a string
-
-
-// Return type: int
-
-
-// Interface definitions:
-
-
-
-Public interface ICount Ascii
-
-
-{
-
-    Int CountAscii (string txtString);
-
-
-}
-
-
-
-
-
-
-// Function: Calculate the number of valid rows
-
-
-// Parameter: File path
-
-
-// Parameter type: string
-
-
-// Return: Number of valid rows
-
-
-// Return type: int
-
-
-// Interface definitions:
-
-
-
-Public interface ICountLine
-
-
-{
-    
-
-Int CountLine (string txtPathString);
-
-
-}
+    // Function: Computing the number of LengthDeterminingPhrases
+    // Parameter: a list of word stringsss and the DeterminingLength
+    // Parameter type: string[] , int 
+    // Return: pharases and its numbers 
+    // Return type:  Dictionary<string, int>,'stirng'is the pharases,'int'is the number of this pharases
+    // class name: CountLDP
+    // Interface definitions:
+    public interface ILengthDeterminingPhrases
+    {
+        Dictionary<string, int> LengthDeterminingPhrases(string[] txtString,int number);
+    }
