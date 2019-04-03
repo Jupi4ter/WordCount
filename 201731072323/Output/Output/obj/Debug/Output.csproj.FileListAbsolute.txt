@@ -1,6 +1,0 @@
-C:\Users\Administrator.WIN-4K5HDJFV5BS\Desktop\软件工程作业\WordCount\201731072323\Output\Output\bin\Debug\Output.dll
-C:\Users\Administrator.WIN-4K5HDJFV5BS\Desktop\软件工程作业\WordCount\201731072323\Output\Output\bin\Debug\Output.pdb
-C:\Users\Administrator.WIN-4K5HDJFV5BS\Desktop\软件工程作业\WordCount\201731072323\Output\Output\obj\Debug\Output.csprojAssemblyReference.cache
-C:\Users\Administrator.WIN-4K5HDJFV5BS\Desktop\软件工程作业\WordCount\201731072323\Output\Output\obj\Debug\Output.csproj.CoreCompileInputs.cache
-C:\Users\Administrator.WIN-4K5HDJFV5BS\Desktop\软件工程作业\WordCount\201731072323\Output\Output\obj\Debug\Output.dll
-C:\Users\Administrator.WIN-4K5HDJFV5BS\Desktop\软件工程作业\WordCount\201731072323\Output\Output\obj\Debug\Output.pdb

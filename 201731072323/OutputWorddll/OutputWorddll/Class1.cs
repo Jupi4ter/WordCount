@@ -18,7 +18,7 @@ namespace OutputWorddll
         /// <returns></returns>
         Dictionary<string, int> OutputWord(string filePath, int outNumb);
     }
-    class Outputword : IOutputWord
+    public class Outputword : IOutputWord
     {
         /// <summary>
         /// this function is to count the frequency of all words and sort the output descendly

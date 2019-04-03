@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 
 namespace CountWord
 {
-    
+
     public interface ICountWord
     {
         /// <summary>
@@ -61,7 +61,7 @@ namespace CountWord
                 //Determine if it is a word
                 for (int i = 0; i < word.Length; i++)
                 {
-                    if (word[i].Length >= 4 && Regex.IsMatch(word[i].Substring(0, 3), @"^[A-Za-z]"))
+                    if (word[i].Length >= 4 && Regex.IsMatch(word[i].Substring(0, 4), @"^[a-zA-Z]{4}$"))
                     {
                         res.Add(word[i]);
                     }
@@ -96,6 +96,7 @@ namespace CountWord
                 sr.Close();
             }
             return wordNum;
+            
         }
 
     }

@@ -4,38 +4,50 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-using System.Collections;
 using System.Text.RegularExpressions;
 
-namespace Word
+
+namespace Countword
 {
+
     public interface ICountWord
     {
+        /// <summary>
+        /// Count Word interface
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <returns>Word number</returns>
         int CountWord(string filePath);
+
     }
 
     public class Countword : ICountWord
     {
+        /// <summary>
+        /// this function is to Count all words
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <returns> output numbers of words</returns>
         public int CountWord(string filePath)
         {
             if (!File.Exists(filePath))
             {
-                Console.WriteLine("文件不存在！");
+                Console.WriteLine("File does not exist！");
                 return 0;
             }
-
+            //StreamReader to read file
             StreamReader sr = new StreamReader(filePath, System.Text.Encoding.UTF8);
-            int wordNum = 0;
-            //StringBuilder res = new StringBuilder();
-            //string res = "";
-            string str = "";
-            string[] word = null;
-            List<string> res = new List<string>();
+
+
+            int wordNum = 0;    //Numbers of word
+            string str = "";    //Save all characters
+            string[] word = null;   //Save temporary word
+            List<string> res = new List<string>();  //Save all words
+            List<int> num = new List<int>();        //Save the words index
 
 
             try
             {
-
                 string line = sr.ReadLine();
 
                 while (line != null)
@@ -43,19 +55,36 @@ namespace Word
                     str = str + line + " ";
                     line = sr.ReadLine();
                 }
+                //Delimiters are Spaces and special characters
+                word = Regex.Split(str, @"[^a-z|^A-Z|^0-9]", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
 
-                word = Regex.Split(str, @"[^a-z|^A-Z|^0-9]", RegexOptions.IgnoreCase);
-
+                //Determine if it is a word
                 for (int i = 0; i < word.Length; i++)
                 {
-
-                    if (Regex.IsMatch(word[i], @"[a-zA-Z]{4}\w+"))
+                    if (word[i].Length >= 4 && Regex.IsMatch(word[i].Substring(0, 4), @"^[a-zA-Z]{4}$"))
                     {
                         res.Add(word[i]);
                     }
                 }
 
-                return res.Count;
+                //Words eliminate heavy
+                for (int i = 0; i < res.Count; i++)
+                {
+                    for (int j = i + 1; j < res.Count; j++)
+                    {
+                        if ((res[j].ToLower() == res[i].ToLower()))
+                        {
+                            num.Add(j);
+                        }
+                    }
+                }
+                num = num.Distinct().ToList();
+                num.Reverse();
+                for (int i = 0; i < num.Count; i++)
+                {
+                    res.RemoveAt(num[i]);
+                }
+                wordNum = res.Count;
 
             }
             catch (IOException e)
@@ -72,3 +101,4 @@ namespace Word
 
     }
 }
+
