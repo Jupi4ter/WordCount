@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using TestDll;
 
 namespace WordCount
 {
@@ -15,9 +16,9 @@ namespace WordCount
         {
             List<string> validLineList = new List<string>();
             List<string> vaildWordList;
-            Console.WriteLine("请输入读取文件路径:");
-            string filePath = Console.ReadLine();
-            string fileContent = File.ReadAllText(filePath);
+            Console.WriteLine("请输入读取文件名:");
+            string fileName = Console.ReadLine();
+            string fileContent = File.ReadAllText(fileName);
             string[] lines = fileContent.Split('\n');
             foreach (string i in lines)
             {
@@ -26,57 +27,17 @@ namespace WordCount
                     validLineList.Add(i);
                 }
             }
-            int characterNumber = CharacterCount(fileContent);
-            int wordNumber = WordCount(out vaildWordList,fileContent);
+            int characterNumber = ClassLibrary.CharacterCount(fileContent);;
+            int wordNumber = ClassLibrary.WordCount(out vaildWordList,fileContent);
             int linesNumber = validLineList.Count;
-            Dictionary<string, int> wordsDictionary = EachWordCount(vaildWordList);
-            Console.WriteLine("characters:" + characterNumber);
-            Console.WriteLine("word:" + wordNumber);
-            Console.WriteLine("lines:" + linesNumber);
+            Dictionary<string, int> wordsDictionary =ClassLibrary.EachWordCount(vaildWordList);
             Dictionary<string, int> finalDictionary = Sort(wordsDictionary);
             Output(characterNumber,wordNumber,linesNumber,finalDictionary);
-
-        }
-
-
-        //统计字符数
-        static int CharacterCount(string fileContent)
-        {
-            return fileContent.Length;
-        }
-
-        //为有效单词列表赋值并统计单词数
-        static int WordCount(out List<string> validWords, string fileContent)
-        {
-            validWords = new List<string>();
-            string[] tempWords = fileContent.Split(new char[] { '\n', ' ', ',', ';' });
-            foreach(string i in tempWords)
+            foreach (string arg in args)
             {
-                if (i.Length >= 4 && Regex.IsMatch(i.Substring(0, 4),@"^[A-Za-z]+$")&&Regex.IsMatch(i.Trim(),"^[0-9a-zA-Z]+$"))
-                {
-                    validWords.Add(i.ToLower().Trim());
-                }
-            }
-            return validWords.Count;
-        }
+                Console.WriteLine(arg);
 
-        //统计文件中各单词的出现次数
-        static Dictionary<string,int> EachWordCount(List<string> vaildWords)
-        {
-            Dictionary<string,int> wordsDictionary = new Dictionary<string,int>();
-            for(int i=0;i<vaildWords.Count; i++)
-            {
-                if (!wordsDictionary.ContainsKey(vaildWords[i]))
-                {
-                    wordsDictionary.Add(vaildWords[i], 1);
-                }
-                else
-                {
-                    wordsDictionary[vaildWords[i]] += 1;
-                }
-            }
-           
-            return wordsDictionary;
+                    }
         }
         //输出
         static void Output( int characterNumber,int wordNumber,int linesNumber, Dictionary<string, int> wordsDictionary)
