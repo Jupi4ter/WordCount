@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using TestDll;
 
 namespace WordCount
 {
@@ -15,9 +16,40 @@ namespace WordCount
         {
             List<string> validLineList = new List<string>();
             List<string> vaildWordList;
-            Console.WriteLine("请输入文件名:");
-            string fileName = Console.ReadLine();
-            string fileContent = File.ReadAllText(fileName);
+            int groupLength=1;
+            string filePath = "";
+            string outputPath = "";
+            int outputNumber = 10;
+            for (int i = 0; i < args.Length; i++)
+            {
+                if (args[i] == "-i")
+                {
+                    filePath = args[i + 1];
+                }
+                else if (args[i] == "-o")
+                {
+                    outputPath = args[i + 1];
+                }
+                else if (args[i] == "-n")
+                {
+                    outputNumber = int.Parse(args[i + 1]);
+                }
+                else if (args[i] == "-m")
+                {
+                    groupLength = int.Parse(args[i + 1]);
+                }
+            }
+            if(filePath=="")
+            {
+                Console.WriteLine("请输入文件读取路径:");
+                filePath = Console.ReadLine();
+            }
+            if (outputPath=="")
+            {
+                Console.WriteLine("请输入文件输出路径:");
+                outputPath = Console.ReadLine();
+            }
+            string fileContent = File.ReadAllText(filePath);
             string[] lines = fileContent.Split('\n');
             foreach (string i in lines)
             {
@@ -26,66 +58,30 @@ namespace WordCount
                     validLineList.Add(i);
                 }
             }
-            int characterNumber = CharacterCount(fileContent);
-            int wordNumber = WordCount(out vaildWordList,fileContent);
+            int characterNumber = ClassLibrary.CharacterCount(fileContent);;
+            int wordNumber = ClassLibrary.WordGroupCount(out vaildWordList,fileContent,groupLength);
             int linesNumber = validLineList.Count;
-            Dictionary<string, int> wordsDictionaryDes = EachWordCount(vaildWordList);
+            Dictionary<string, int> wordsDictionary =ClassLibrary.EachWordCount(vaildWordList);
+            Dictionary<string, int> finalDictionary = Sort(wordsDictionary);
+            Output(outputPath,characterNumber,wordNumber,linesNumber,finalDictionary,outputNumber);           
+        }
+               
+        //输出
+        public static void Output(string outputPath, int characterNumber,int wordNumber,int linesNumber, Dictionary<string, int> wordsDictionary,int outputNunber)
+        {
             Console.WriteLine("characters:" + characterNumber);
-            Console.WriteLine("word:" + wordNumber);
+            Console.WriteLine("words:" + wordNumber);
             Console.WriteLine("lines:" + linesNumber);
-            Dictionary<string, int> finalDictionary = Sort(wordsDictionaryDes);
-            OutputWordCount(finalDictionary);
-        }
-
-        //统计字符数
-        static int CharacterCount(string fileContent)
-        {
-            return fileContent.Length;
-        }
-
-        //为有效单词列表赋值并统计单词数
-        static int WordCount(out List<string> validWords, string fileContent)
-        {
-            validWords = new List<string>();
-            string[] tempWords = fileContent.Split(new char[] { '\n', ' ', ',', ';' });
-            foreach(string i in tempWords)
-            {
-                if (i.Length >= 4 && Regex.IsMatch(i.Substring(0, 4),@"^[A-Za-z]+$")&&Regex.IsMatch(i.Trim(),"^[0-9a-zA-Z]+$"))
-                {
-                    validWords.Add(i.Trim());
-                }
-            }
-            return validWords.Count;
-        }
-
-        //统计文件中各单词的出现次数并按出现次数进行第一次排序
-        static Dictionary<string,int> EachWordCount(List<string> vaildWords)
-        {
-            Dictionary<string,int> wordsDictionary = new Dictionary<string,int>();
-            for(int i=0;i<vaildWords.Count; i++)
-            {
-                if (!wordsDictionary.ContainsKey(vaildWords[i]))
-                {
-                    wordsDictionary.Add(vaildWords[i], 1);
-                }
-                else
-                {
-                    wordsDictionary[vaildWords[i]] += 1;
-                }
-            }
-            Dictionary<string,int> wordsDictionaryDes = wordsDictionary.OrderByDescending(o => o.Value).ToDictionary(o => o.Key, x => x.Value);
-            return wordsDictionaryDes;
-        }
-        //输出单词以及词频
-        static void OutputWordCount(Dictionary<string, int> wordsDictionary)
-        {
-            int k = 0;
+            File.WriteAllText(outputPath, "characters:" + characterNumber+"\n");
+            File.AppendAllText(outputPath, "word:" + wordNumber + "\n");
+            File.AppendAllText(outputPath, "lines:" + linesNumber + "\n");
             foreach (string key in wordsDictionary.Keys)
             {
-                if (k < 10)
+                if (outputNunber >0)
                 {
-                    Console.WriteLine("<"+key+">:" + wordsDictionary[key]);                 
-                    k++;
+                    Console.WriteLine("<"+key+">:" + wordsDictionary[key]);
+                    File.AppendAllText(outputPath, "<" + key + ">:" + wordsDictionary[key] + "\n");
+                    outputNunber--;
                 }
                 else
                 {
@@ -93,17 +89,18 @@ namespace WordCount
                 }
             }
         }
-        //进行第二次排序
-        static Dictionary<string, int> Sort(Dictionary<string,int> dictionary)
+        //进行排序
+        public static Dictionary<string, int> Sort(Dictionary<string,int> dictionary)
         {
             try
             {
+                Dictionary<string, int> dictionaryDes = dictionary.OrderByDescending(o => o.Value).ToDictionary(o => o.Key, x => x.Value); //按单词出现次数进行第一次排序
                 List<string> keyList = new List<string>();
                 Dictionary<string, int> tempDictionary = new Dictionary<string, int>();
-                foreach (string key in dictionary.Keys)
+                foreach (string key in dictionaryDes.Keys)
                 {
                     keyList.Add(key);
-                    tempDictionary.Add(key, dictionary[key]);
+                    tempDictionary.Add(key, dictionaryDes[key]);
                 }
                 int flag = 1;
                 for (int i = 1; i < keyList.Count && flag == 1; i++)
@@ -140,7 +137,6 @@ namespace WordCount
                 }
             }          
             catch{ }
-            foreach (string i in dictionary.Keys) Console.WriteLine(i);
             return dictionary;
         }
     }
