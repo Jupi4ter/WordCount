@@ -16,25 +16,16 @@ namespace WordCount
         {
             List<string> validLineList = new List<string>();
             List<string> vaildWordList;
-<<<<<<< HEAD:201731062209/WordCount/WordCount/Program.cs
             int groupLength=1;
             string filePath = "";
             string outputPath = "";
             int outputNumber = 10;
             for (int i = 0; i < args.Length; i++)
-=======
-            Console.WriteLine("请输入读取文件名:");
-            string fileName = Console.ReadLine();
-            string fileContent = File.ReadAllText(fileName);
-            string[] lines = fileContent.Split('\n');
-            foreach (string i in lines)
->>>>>>> e9b8e100dd915442e38d0ed84fa8528f686a69cf:201731062209/WordCount/Program.cs
             {
                 if (args[i] == "-i")
                 {
                     filePath = args[i + 1];
                 }
-<<<<<<< HEAD:201731062209/WordCount/WordCount/Program.cs
                 else if (args[i] == "-o")
                 {
                     outputPath = args[i + 1];
@@ -80,48 +71,17 @@ namespace WordCount
         {
             Console.WriteLine("characters:" + characterNumber);
             Console.WriteLine("words:" + wordNumber);
-=======
-            }
-            int characterNumber = ClassLibrary.CharacterCount(fileContent);;
-            int wordNumber = ClassLibrary.WordCount(out vaildWordList,fileContent);
-            int linesNumber = validLineList.Count;
-            Dictionary<string, int> wordsDictionary =ClassLibrary.EachWordCount(vaildWordList);
-            Dictionary<string, int> finalDictionary = Sort(wordsDictionary);
-            Output(characterNumber,wordNumber,linesNumber,finalDictionary);
-            foreach (string arg in args)
-            {
-                Console.WriteLine(arg);
-
-                    }
-        }
-        //输出
-        static void Output( int characterNumber,int wordNumber,int linesNumber, Dictionary<string, int> wordsDictionary)
-        {
-            Console.WriteLine("请输入打印文件的路径");
-            string outputPath = Console.ReadLine();
-            Console.WriteLine("characters:" + characterNumber);
-            Console.WriteLine("word:" + wordNumber);
->>>>>>> e9b8e100dd915442e38d0ed84fa8528f686a69cf:201731062209/WordCount/Program.cs
             Console.WriteLine("lines:" + linesNumber);
             File.WriteAllText(outputPath, "characters:" + characterNumber+"\n");
             File.AppendAllText(outputPath, "word:" + wordNumber + "\n");
             File.AppendAllText(outputPath, "lines:" + linesNumber + "\n");
-<<<<<<< HEAD:201731062209/WordCount/WordCount/Program.cs
-=======
-
-            int k = 0;
->>>>>>> e9b8e100dd915442e38d0ed84fa8528f686a69cf:201731062209/WordCount/Program.cs
             foreach (string key in wordsDictionary.Keys)
             {
                 if (outputNunber >0)
                 {
                     Console.WriteLine("<"+key+">:" + wordsDictionary[key]);
                     File.AppendAllText(outputPath, "<" + key + ">:" + wordsDictionary[key] + "\n");
-<<<<<<< HEAD:201731062209/WordCount/WordCount/Program.cs
                     outputNunber--;
-=======
-                    k++;
->>>>>>> e9b8e100dd915442e38d0ed84fa8528f686a69cf:201731062209/WordCount/Program.cs
                 }
                 else
                 {
@@ -130,11 +90,7 @@ namespace WordCount
             }
         }
         //进行排序
-<<<<<<< HEAD:201731062209/WordCount/WordCount/Program.cs
         public static Dictionary<string, int> Sort(Dictionary<string,int> dictionary)
-=======
-        static Dictionary<string, int> Sort(Dictionary<string,int> dictionary)
->>>>>>> e9b8e100dd915442e38d0ed84fa8528f686a69cf:201731062209/WordCount/Program.cs
         {
             try
             {
