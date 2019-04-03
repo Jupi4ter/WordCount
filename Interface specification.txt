@@ -1,0 +1,63 @@
+// Function: Computing ASCII characters
+
+
+// Parameter: File path
+
+
+// Parameter type: string
+
+
+// Return: Number of characters in a string
+
+
+// Return type: int
+
+
+// Interface definitions:
+
+
+
+Public interface ICount Ascii
+
+
+{
+
+    Int CountAscii (string txtString);
+
+
+}
+
+
+
+
+
+
+// Function: Calculate the number of valid rows
+
+
+// Parameter: File path
+
+
+// Parameter type: string
+
+
+// Return: Number of valid rows
+
+
+// Return type: int
+
+
+// Interface definitions:
+
+
+
+Public interface ICountLine
+
+
+{
+    
+
+Int CountLine (string txtPathString);
+
+
+}
