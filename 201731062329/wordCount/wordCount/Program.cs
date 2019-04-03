@@ -11,10 +11,8 @@ namespace wordCount
     {
         static void Main(String[] args)
         {            
-            StreamWriter writeFile = new StreamWriter(@"D:\软件工程\WordCount\201731062329" +
-                @"\wordCount\wordCount\bin\Debug\out.txt", false);//false表示将文件覆盖，而不是追加
-            FileOperate fileOperate = new FileOperate(@"D:\软件工程\WordCount\201731062329" +
-                @"\wordCount\wordCount\bin\Debug\input.txt", writeFile);
+            StreamWriter writeFile = new StreamWriter("out.txt", false);//false表示将文件覆盖，而不是追加
+            FileOperate fileOperate = new FileOperate("input.txt", writeFile);
             //fileOperate.wordTimes(); 
             fileOperate.charNumber();
             fileOperate.wordNumber();
@@ -105,10 +103,17 @@ namespace wordCount
                         }
                     }
                     else
-                    {
+                    {                        
                         //如果第五个字符开始出现非字母、数字，就不是单词
                         if(!((ch[i] >= 'a' && ch[i] <= 'z') || (ch[i] >= 'A' && ch[i] <= 'Z') || (ch[i] >= '0' && ch[i] <= '9')))
                         {
+                            if(i == word.Length - 1)
+                            {
+                                if(ch[i] == ',' || ch[i] == '.' || ch[i]=='!')//若最后一个字符为","、"."、"!"前面也应该是单词
+                                {
+                                    return true;
+                                }
+                            }
                             return false;
                         }
                     }
@@ -158,6 +163,11 @@ namespace wordCount
                 {
                     if(isWords(tempArray[i]))
                     {
+                        if (tempArray[i].EndsWith(".") || tempArray[i].EndsWith(",") || tempArray[i].EndsWith("!"))//这里将英语标点符号的特性处理掉
+                        {
+                            char[] tempCharArray1 = tempArray[i].ToCharArray();
+                            tempArray[i] = new string(tempCharArray1, 0, tempCharArray1.Length - 1);//用字符数组的起始位置和长度创建字符串
+                        }
                         wordList.Add(tempArray[i]);
                     }
                 }
