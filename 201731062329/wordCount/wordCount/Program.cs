@@ -14,7 +14,7 @@ namespace wordCount
             //StreamWriter writeFile = new StreamWriter("out.txt", false);//false表示将文件覆盖，而不是追加
             //FileOperate fileOperate = new FileOperate("input.txt", writeFile);
             //初始化
-            //string[] arg = new string[] { "-i", "input.txt","-o","out.txt","-n","5" };//测试代码
+            //string[] arg = new string[] { "-i", "input.txt","-o","out.txt","-n","3","-m","2" };//测试代码
             StreamWriter writeFile = null;
             FileOperate fileOperate = null;
             //创建读文件对象
@@ -240,7 +240,7 @@ namespace wordCount
             return num;
         }
         /// <summary>
-        /// 统计每个单词出现的次数，并写入文件
+        /// 统计每个单词出现的次数
         /// </summary>
         public Dictionary<string, int> wordTimes(int number)
         {
@@ -282,7 +282,7 @@ namespace wordCount
                 {
                     wordsAndTimes.Add(temp, count);//添加元素
                 }
-                catch(Exception  e)//主要处理重复的情况
+                catch//主要处理重复的情况
                 {
                     continue;
                 }
@@ -375,7 +375,7 @@ namespace wordCount
                 {
                     wordsAndTimes.Add(temp, count);//添加元素
                 }
-                catch (Exception e)//主要处理重复的情况
+                catch//主要处理重复的情况
                 {
                     continue;
                 }
@@ -406,6 +406,7 @@ namespace wordCount
             reader.Close();
             //writeFile.Close();
         }
+
     }
     
 }
