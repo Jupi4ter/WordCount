@@ -5,3 +5,13 @@ C:\Users\yan\Desktop\201731062301\WordCount\WordCount\obj\Debug\WordCount.csproj
 C:\Users\yan\Desktop\201731062301\WordCount\WordCount\obj\Debug\WordCount.csproj.CoreCompileInputs.cache
 C:\Users\yan\Desktop\201731062301\WordCount\WordCount\obj\Debug\WordCount.exe
 C:\Users\yan\Desktop\201731062301\WordCount\WordCount\obj\Debug\WordCount.pdb
+C:\Users\yan\Desktop\WordCount\201731062301\WordCount\WordCount\bin\Debug\WordCount.exe.config
+C:\Users\yan\Desktop\WordCount\201731062301\WordCount\WordCount\bin\Debug\WordCount.exe
+C:\Users\yan\Desktop\WordCount\201731062301\WordCount\WordCount\bin\Debug\WordCount.pdb
+C:\Users\yan\Desktop\WordCount\201731062301\WordCount\WordCount\bin\Debug\Words.dll
+C:\Users\yan\Desktop\WordCount\201731062301\WordCount\WordCount\bin\Debug\Words.pdb
+C:\Users\yan\Desktop\WordCount\201731062301\WordCount\WordCount\obj\Debug\WordCount.csprojAssemblyReference.cache
+C:\Users\yan\Desktop\WordCount\201731062301\WordCount\WordCount\obj\Debug\WordCount.csproj.CoreCompileInputs.cache
+C:\Users\yan\Desktop\WordCount\201731062301\WordCount\WordCount\obj\Debug\WordCount.csproj.CopyComplete
+C:\Users\yan\Desktop\WordCount\201731062301\WordCount\WordCount\obj\Debug\WordCount.exe
+C:\Users\yan\Desktop\WordCount\201731062301\WordCount\WordCount\obj\Debug\WordCount.pdb
