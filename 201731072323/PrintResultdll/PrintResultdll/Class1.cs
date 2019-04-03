@@ -13,7 +13,7 @@ namespace PrintWord
     {
         void PrintWord(int asciiNum, int wordNum, int lineNum, Dictionary<string, int> wordFrequency, Dictionary<string, int> phraseFrequency);
     }
-    class PrintResult:IPrintResult
+    class PrintResult : IPrintResult
     {
 
         /// <summary>

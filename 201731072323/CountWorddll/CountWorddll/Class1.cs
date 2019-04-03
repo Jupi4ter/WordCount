@@ -14,7 +14,7 @@ namespace Word
         int CountWord(string filePath);
     }
 
-    public class Word : ICountWord
+    public class Countword : ICountWord
     {
         public int CountWord(string filePath)
         {
