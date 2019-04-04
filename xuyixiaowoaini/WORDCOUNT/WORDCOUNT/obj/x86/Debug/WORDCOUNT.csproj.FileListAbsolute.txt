@@ -3,3 +3,7 @@ C:\Users\cyc\Desktop\新建文件夹\WordCount\201731062102\WORDCOUNT\WORDCOUNT\
 C:\Users\cyc\Desktop\新建文件夹\WordCount\201731062102\WORDCOUNT\WORDCOUNT\obj\x86\Debug\WORDCOUNT.exe
 C:\Users\cyc\Desktop\新建文件夹\WordCount\201731062102\WORDCOUNT\WORDCOUNT\obj\x86\Debug\WORDCOUNT.pdb
 C:\Users\cyc\Desktop\新建文件夹\WordCount\201731062102\WORDCOUNT\WORDCOUNT\obj\x86\Debug\WORDCOUNT.csprojResolveAssemblyReference.cache
+C:\Users\cyc\Desktop\新建文件夹\WordCount\xuyixiaowoaini\WORDCOUNT\WORDCOUNT\obj\x86\Debug\WORDCOUNT.exe
+C:\Users\cyc\Desktop\新建文件夹\WordCount\xuyixiaowoaini\WORDCOUNT\WORDCOUNT\obj\x86\Debug\WORDCOUNT.pdb
+C:\Users\cyc\Desktop\WORDCOUNT\WORDCOUNT\obj\x86\Debug\WORDCOUNT.exe
+C:\Users\cyc\Desktop\WORDCOUNT\WORDCOUNT\obj\x86\Debug\WORDCOUNT.pdb
