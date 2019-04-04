@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0CA41EA9-908C-4F9F-AA2F-89AB1D49E431}</ProjectGuid>
+    <ProjectGuid>{C581B5D8-1961-4C34-A4DD-73E31E228376}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>wordcount</RootNamespace>
     <AssemblyName>wordcount</AssemblyName>
@@ -33,6 +33,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ClassLibrary1">
+      <HintPath>..\..\ClassLibrary1\ClassLibrary1\bin\Debug\ClassLibrary1.dll</HintPath>
+    </Reference>
+    <Reference Include="ClassLibrary2">
+      <HintPath>..\..\ClassLibrary2\ClassLibrary2\bin\Debug\ClassLibrary2.dll</HintPath>
+    </Reference>
+    <Reference Include="ClassLibrary3">
+      <HintPath>..\..\ClassLibrary3\ClassLibrary3\bin\Debug\ClassLibrary3.dll</HintPath>
+    </Reference>
+    <Reference Include="ClassLibrary4">
+      <HintPath>..\..\ClassLibrary4\ClassLibrary4\bin\Debug\ClassLibrary4.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,6 +60,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
