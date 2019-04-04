@@ -19,3 +19,6 @@ E:\3\git\second\WordCount\201731062106\wordCount\wordCount\obj\Debug\wordCount.c
 E:\3\git\second\WordCount\201731062106\wordCount\wordCount\obj\Debug\wordCount.csproj.CoreCompileInputs.cache
 E:\3\git\second\WordCount\201731062106\wordCount\wordCount\obj\Debug\wordCount.exe
 E:\3\git\second\WordCount\201731062106\wordCount\wordCount\obj\Debug\wordCount.pdb
+E:\3\git\second\WordCount\201731062106\wordCount\wordCount\bin\Debug\ClassLibrary1.dll
+E:\3\git\second\WordCount\201731062106\wordCount\wordCount\bin\Debug\ClassLibrary1.pdb
+E:\3\git\second\WordCount\201731062106\wordCount\wordCount\obj\Debug\wordCount.csproj.CopyComplete
