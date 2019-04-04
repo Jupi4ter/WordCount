@@ -43,7 +43,7 @@ namespace wordcount
                     foreach (char chs in ch)
                     {
                         cout++;
-                        if (chs <= 'Z' && chs >= 'A')
+                        if (chs <= 'z' && chs >= 'a')
                         {
                             m++;
                         }
@@ -93,7 +93,7 @@ namespace wordcount
                         foreach (char chs in ch)
                         {
                             cout++;
-                            if (chs <= 'Z' && chs >= 'A')
+                            if (chs <= 'z' && chs >= 'a')
                             {
                                 m++;
                             }
@@ -132,7 +132,7 @@ namespace wordcount
         static void Main(string[] args)
         {
             Count count = new Count();//实例化  
-            string word = File.ReadAllText(@"C:\Users\hdkj\Desktop\test.txt").ToUpper();//将输入的英文字符全部转换为小写字符
+            string word = File.ReadAllText(@"C:\Users\hdkj\Desktop\test.txt").ToLower();//将输入的英文字符全部转换为小写字符
             count.countChar(word);
             count.Countlines();
             count.Countword(word);

@@ -1,23 +1,23 @@
 characters:258
 lines:4
 words:37
-FATHER：6
+father：6
 
-TAKE：4
+take：4
 
-TODAY：3
+today：3
 
-SCHOOL：2
+school：2
 
-LIKE：2
+like：2
 
-WITH：2
+with：2
 
-FRIENDS：2
+friends：2
 
-PLAY：2
+play：2
 
-BECAUSE：2
+because：2
 
-HOME：2
+home：2
 
