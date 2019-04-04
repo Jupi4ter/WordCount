@@ -71,13 +71,13 @@ namespace TestDll
             Dictionary<string, int> wordsDictionary = new Dictionary<string, int>();
             for (int i = 0; i < vaildWords.Count; i++)
             {
-                if (!wordsDictionary.ContainsKey(vaildWords[i]))
+                if (!wordsDictionary.ContainsKey(vaildWords[i]))                //如果wordsDictionary中没有保存该单词（词组）
                 {
-                    wordsDictionary.Add(vaildWords[i], 1);
+                    wordsDictionary.Add(vaildWords[i], 1);                      //就录入该单词（词组）并将对应的出现的次数value设为1
                 }
                 else
                 {
-                    wordsDictionary[vaildWords[i]] += 1;
+                    wordsDictionary[vaildWords[i]] += 1;                        //如果已经录入就将出现的次数加一
                 }
             }
 

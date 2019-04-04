@@ -16,10 +16,31 @@ namespace WordCount
         {
             List<string> validLineList = new List<string>();
             List<string> vaildWordList;
-            int groupLength=1;
+            int groupLength = 1;
             string filePath = "";
             string outputPath = "";
             int outputNumber = 10;
+            CommandMethod(args, ref groupLength, ref filePath, ref outputPath, ref outputNumber);
+            string fileContent = File.ReadAllText(filePath);
+            string[] lines = fileContent.Split('\n');
+            foreach (string i in lines)
+            {
+                if (i.Trim() != "")
+                {
+                    validLineList.Add(i);
+                }
+            }
+            int characterNumber = ClassLibrary.CharacterCount(fileContent); ;                                //统计字符数
+            int wordNumber = ClassLibrary.WordGroupCount(out vaildWordList, fileContent, groupLength);        //统计有效/单词(词组)数
+            int linesNumber = validLineList.Count;
+            Dictionary<string, int> wordsDictionary = ClassLibrary.EachWordCount(vaildWordList);             //统计每个单词(词组)出现的次数
+            Dictionary<string, int> finalDictionary = Sort(wordsDictionary);                                //按照出现的次数为单词(词组)降序排序，出现次数相同按字典顺序升序排
+            Output(outputPath, characterNumber, wordNumber, linesNumber, finalDictionary, outputNumber);
+            Console.ReadKey();
+        }
+        //根据命令行参数进行操作
+        public static void CommandMethod(string[] args, ref int groupLength, ref string filePath, ref string outputPath, ref int outputNumber)
+        {
             for (int i = 0; i < args.Length; i++)
             {
                 if (args[i] == "-i")
@@ -38,35 +59,31 @@ namespace WordCount
                 {
                     groupLength = int.Parse(args[i + 1]);
                 }
+                else if (args[i] == "-help")
+                {
+                    Console.WriteLine("-i [path]              设定读入文件路径");
+                    Console.WriteLine("-o [Path]              设定写入文件路径");
+                    Console.WriteLine("-m [number]            设定读词组长度");
+                    Console.WriteLine("-n [number]            设定读入文件路径");
+                }
             }
-            if(filePath=="")
+            if (filePath == "")
             {
                 Console.WriteLine("请输入文件读取路径:");
                 filePath = Console.ReadLine();
+                if (!File.Exists(filePath))   //判断文件是否存在
+                {
+                    Console.WriteLine("文件" + filePath + "不存在!");
+                    return;
+                }
             }
-            if (outputPath=="")
+            if (outputPath == "")
             {
                 Console.WriteLine("请输入文件输出路径:");
                 outputPath = Console.ReadLine();
             }
-            string fileContent = File.ReadAllText(filePath);
-            string[] lines = fileContent.Split('\n');
-            foreach (string i in lines)
-            {
-                if (i.Trim() != "")
-                {
-                    validLineList.Add(i);
-                }
-            }
-            int characterNumber = ClassLibrary.CharacterCount(fileContent);;                                //统计字符数
-            int wordNumber = ClassLibrary.WordGroupCount(out vaildWordList,fileContent,groupLength);        //统计有效/单词(词组)数
-            int linesNumber = validLineList.Count;
-            Dictionary<string, int> wordsDictionary =ClassLibrary.EachWordCount(vaildWordList);             //统计每个单词(词组)出现的次数
-            Dictionary<string, int> finalDictionary = Sort(wordsDictionary);                                //按照出现的次数为单词(词组)降序排序，出现次数相同按字典顺序升序排
-            Output(outputPath,characterNumber,wordNumber,linesNumber,finalDictionary,outputNumber);
-            Console.ReadKey();
         }
-               
+
         //输出
         public static void Output(string outputPath, int characterNumber,int wordNumber,int linesNumber, Dictionary<string, int> wordsDictionary,int outputNunber)
         {
@@ -121,7 +138,7 @@ namespace WordCount
                         }
                     }                   
                 }
-                //将排好序的keys和values重新写入Dictionary
+                //将排好序的keys和values重新写入dictionary
                 dictionary.Clear();      
                 for (int n = 0; n < keyList.Count; n++)
                 {
@@ -144,3 +161,4 @@ namespace WordCount
         }
     }
 }
+         
