@@ -68,15 +68,14 @@
         Dictionary<string, int> LengthDeterminingPhrases(string txtString);
     }
 6.
-    // Function: Printing all results
-    // Parameter: ascii number, line number, word frequency, phrase frequency
-    // Parameter type: string
-    // Return: null
-    // Return type: void
-    // class name:PrintResult
+    /// Function: Computing the number of LengthDeterminingPhrases
+    // Parameter: File Path  £¬the determined number
+    // Parameter type: string £¬int
+    // Return: pharases and its numbers 
+    // Return type:  Dictionary<string, int>,'stirng'is the pharases,'int'is the number of this pharases
+    // class name: CountLDP
     // Interface definitions:
-
-    public interface IPrintResult
+    public interface ILengthDeterminingPhrases
     {
-        void PrintWord(int asciiNum, int wordNum, int lineNum, Dictionary<string, int> wordFrequency, Dictionary<string, int> phraseFrequency);
+        Dictionary<string, int> LengthDeterminingPhrases(string txtPathString, int number);
     }

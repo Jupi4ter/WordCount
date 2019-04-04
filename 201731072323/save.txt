@@ -1,0 +1,16 @@
+characters: 76
+words: 8
+lines: 2
+qwer : 2 
+asdf : 2 
+qwefdasf : 1 
+qweqdsfa : 1 
+qwefa : 1 
+qwefdasf qweqdsfa  : 1 
+qweqdsfa qwefa  : 1 
+qwefa qwer  : 1 
+qwer qwer  : 1 
+qwer asdf  : 1 
+asdf asdf  : 1 
+asdf sdadqd  : 1 
+qweqwdad asdas  : 1 
