@@ -1,0 +1,13 @@
+characters: 140
+words:13
+lines:4
+abcd1:1
+abcd123:2
+abcd2:1
+abcd3:1
+abcd4:1
+abcd456:1
+abcdefg:1
+ghimn:1
+sindoms1998:1
+windoms2000:1
