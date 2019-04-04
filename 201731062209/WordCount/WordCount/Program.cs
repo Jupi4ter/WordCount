@@ -58,12 +58,13 @@ namespace WordCount
                     validLineList.Add(i);
                 }
             }
-            int characterNumber = ClassLibrary.CharacterCount(fileContent);;
-            int wordNumber = ClassLibrary.WordGroupCount(out vaildWordList,fileContent,groupLength);
+            int characterNumber = ClassLibrary.CharacterCount(fileContent);;                                //统计字符数
+            int wordNumber = ClassLibrary.WordGroupCount(out vaildWordList,fileContent,groupLength);        //统计有效/单词(词组)数
             int linesNumber = validLineList.Count;
-            Dictionary<string, int> wordsDictionary =ClassLibrary.EachWordCount(vaildWordList);
-            Dictionary<string, int> finalDictionary = Sort(wordsDictionary);
-            Output(outputPath,characterNumber,wordNumber,linesNumber,finalDictionary,outputNumber);           
+            Dictionary<string, int> wordsDictionary =ClassLibrary.EachWordCount(vaildWordList);             //统计每个单词(词组)出现的次数
+            Dictionary<string, int> finalDictionary = Sort(wordsDictionary);                                //按照出现的次数为单词(词组)降序排序，出现次数相同按字典顺序升序排
+            Output(outputPath,characterNumber,wordNumber,linesNumber,finalDictionary,outputNumber);
+            Console.ReadKey();
         }
                
         //输出
@@ -95,30 +96,32 @@ namespace WordCount
             try
             {
                 Dictionary<string, int> dictionaryDes = dictionary.OrderByDescending(o => o.Value).ToDictionary(o => o.Key, x => x.Value); //按单词出现次数进行第一次排序
-                List<string> keyList = new List<string>();
-                Dictionary<string, int> tempDictionary = new Dictionary<string, int>();
+                List<string> keyList = new List<string>();                                  //用一个List保存一下key，用该List进行排序
+                Dictionary<string, int> tempDictionary = new Dictionary<string, int>();     //用一个Dictionary临时保存一下key和value
                 foreach (string key in dictionaryDes.Keys)
                 {
                     keyList.Add(key);
                     tempDictionary.Add(key, dictionaryDes[key]);
                 }
-                int flag = 1;
-                for (int i = 1; i < keyList.Count && flag == 1; i++)
+                //按字典顺序进行排序
+                bool flag = true;
+                for (int i = 1; i < keyList.Count && flag == true; i++)
                 {
-                    flag = 0;
+                    flag = false;
                     for (int j = 0; j < keyList.Count - i; j++)
                     {
                         string nowKey = keyList[j];
                         string nextKey = keyList[j + 1];
                         if (nowKey.CompareTo(nextKey) > 0 && tempDictionary[nowKey] == tempDictionary[nextKey])
                         {
-                            flag = 1;
+                            flag = true;
                             var tempKey = keyList[j];
                             keyList[j] = keyList[j + 1];
                             keyList[j + 1] = tempKey;
                         }
                     }                   
                 }
+                //将排好序的keys和values重新写入Dictionary
                 dictionary.Clear();      
                 for (int n = 0; n < keyList.Count; n++)
                 {

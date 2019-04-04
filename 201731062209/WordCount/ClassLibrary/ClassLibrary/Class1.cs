@@ -19,7 +19,7 @@ namespace TestDll
         public static int WordGroupCount(out List<string> validWords, string fileContent,int groupLength)
         {
             validWords = new List<string>();
-            string[] tempWords = fileContent.Split(new char[] { '\n','\r', ' ', ',', ';',':','.' });
+            string[] tempWords = fileContent.Split(new char[] { '\n','\r', ' ', ',', ';',':','.','?','!' });
             for (int i = 0; i < tempWords.Length - groupLength+1; i++)
             {
                 string[] group = new string[groupLength];
