@@ -1,0 +1,7 @@
+E:\c#项目\Wordcount\Wordcount\bin\Debug\Wordcount.exe.config
+E:\c#项目\Wordcount\Wordcount\bin\Debug\Wordcount.exe
+E:\c#项目\Wordcount\Wordcount\bin\Debug\Wordcount.pdb
+E:\c#项目\Wordcount\Wordcount\obj\Debug\Wordcount.csprojAssemblyReference.cache
+E:\c#项目\Wordcount\Wordcount\obj\Debug\Wordcount.csproj.CoreCompileInputs.cache
+E:\c#项目\Wordcount\Wordcount\obj\Debug\Wordcount.exe
+E:\c#项目\Wordcount\Wordcount\obj\Debug\Wordcount.pdb
