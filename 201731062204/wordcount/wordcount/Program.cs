@@ -27,6 +27,54 @@ namespace wordcount
             wr.Close();
             fs.Close();
         }
+        public void Countword(string q)//统计单词数
+        {
+            int n = 0;
+            int num = 0;
+            string[] words = q.Split(new char[] { ',', ' ', '.', '?', '!', ':', ';', '—', ',', '"', '\n' });//提取单词
+            foreach (string i in words)//判断是否为单词
+            {
+                if (i.Length >= 4)
+                {
+                    int cout = 0;
+                    int m = 0;
+                    n++;
+                    char[] ch = i.ToCharArray();
+                    foreach (char chs in ch)
+                    {
+                        cout++;
+                        if (chs <= 'Z' && chs >= 'A')
+                        {
+                            m++;
+                        }
+                        while (m == 4 && cout == 4)
+                        {
+                            num++;
+                            break;
+                        }
+                    }                    
+                }
+            }
+            string result1 = @"F:\WordCount\201731062204\wordcount\wordcount\result.txt";
+            FileStream fs = new FileStream(result1, FileMode.Append);
+            StreamWriter wr = null;
+            wr = new StreamWriter(fs);
+            wr.WriteLine("words:" + num);
+            wr.Close();
+            fs.Close();
+        }
+        public void Countlines()
+        {
+            string[] line = File.ReadAllLines(@"C:\Users\hdkj\Desktop\test.txt");
+            int lines= line.Length;
+            string result1 = @"F:\WordCount\201731062204\wordcount\wordcount\result.txt";
+            FileStream fs = new FileStream(result1, FileMode.Append);
+            StreamWriter wr = null;
+            wr = new StreamWriter(fs);
+            wr.WriteLine("lines:" + lines);
+            wr.Close();
+            fs.Close();
+        }                   
     }
     class Program
     {
@@ -35,6 +83,8 @@ namespace wordcount
             Count count = new Count();//实例化  
             string word = File.ReadAllText(@"C:\Users\hdkj\Desktop\test.txt").ToUpper();//将输入的英文字符全部转换为大写字符
             count.countChar(word);
+            count.Countlines();
+            count.Countword(word);
         }
     }
 }
