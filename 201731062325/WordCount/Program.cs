@@ -34,7 +34,7 @@ namespace WordCount
                             break;
                         case "-help":
                             Console.WriteLine("-------------------**********-------------------");//分隔线
-                            Console.WriteLine("词频管理命令行程序(v3.0)帮助界面：\t");
+                            Console.WriteLine("词频管理命令行程序(v2.0)帮助界面：\t");
                             Console.WriteLine("作者：Admin,其保留对该程序的所有权利");
                             Console.WriteLine("-------------------**********-------------------");//分隔线
                             Console.WriteLine("参数说明：");
