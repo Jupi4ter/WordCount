@@ -14,21 +14,22 @@ namespace UnitTestProject1
             string str = "Abcd aa!";
             int count = str.Length;
             Assert.AreEqual(WordsList.CountChar(str), count);
+            string str1 = "";
+            Assert.AreEqual(WordsList.CountChar(str1), str1.Length);
         }
         [TestMethod]
-        public void TestCountWords()
+        public void TestJudgeWords()
         {
-            string str = "Abcd aa abcd";
+            string str = null;
+            Assert.IsNull(WordsList.Judge(str));
+        }
+        [TestMethod]
+        public void TestCountWord()
+        {
+            string str = null;
             List<string> list = new List<string>();
-            string[] wordsArr1 = Regex.Split(str.ToLower(), "\\s*[^0-9a-zA-Z]+");
-            foreach (string word in wordsArr1)
-            {
-                if (Regex.IsMatch(word, "^[a-zA-Z]{4,}[a-zA-Z0-9]*"))
-                {
-                    list.Add(word);
-                }
-            }
-            Assert.AreEqual(WordsList.CountWords(str), list.Count);
+            list = WordsList.Judge(str);
+            Assert.IsNull(list);
         }
     }
 }
