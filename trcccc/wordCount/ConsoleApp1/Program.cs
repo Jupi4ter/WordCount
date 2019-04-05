@@ -1,0 +1,120 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using System.Collections;
+using System.Text.RegularExpressions;
+
+namespace ConsoleApp14
+{
+    public class Program
+    {
+        static Dictionary<string, int> CountWords(string text)
+        {
+            Dictionary<string, int> frequencies;
+            frequencies = new Dictionary<string, int>();
+
+            string[] words = Regex.Split(text, @"\W+");
+
+            foreach (string word in words)
+            {
+                if (frequencies.ContainsKey(word))
+                {
+                    frequencies[word]++;
+                }
+                else
+                {
+                    frequencies[word] = 1;
+                }
+            }
+            return frequencies;
+        }
+
+        static void Main(string[] args)
+        {
+            string text = File.ReadAllText(@"d:\input.txt");
+
+            CountChar countChar = new CountChar(text);
+            CountLine countLine = new CountLine(text);
+            CountWord countWord = new CountWord(text);
+
+            Dictionary<string, int> frequencies = CountWords(text);
+            foreach (KeyValuePair<string, int> entry in frequencies)
+            {
+                string word = entry.Key;
+                int frequency = entry.Value;
+                if(word.Length>3)
+                Console.WriteLine("{0}: {1}", word, frequency);
+            }
+            Console.ReadLine();
+        }
+    }
+
+    public class CountLine
+    {
+        //统计行数
+        public CountLine(string path)
+        {
+            int count = 0;
+            string[] line = File.ReadAllLines(@"d:\input.txt");
+            for (int i = 0; i < line.Length; i++)
+            {
+                if (line[i] != null)
+                {
+                    count = count + 1;
+                }
+            }
+            Console.WriteLine("lines:" + count);
+        }
+    }
+
+    public class CountChar
+    {
+        //统计字符数
+        public CountChar(string path)
+        {
+            string filestr = System.IO.File.ReadAllText(@"d:\input.txt");
+            int a;
+            a = filestr.Length;
+            Console.WriteLine("characters:" + a);
+        }
+    }
+
+    public class CountWord
+    {
+        public void pinlv(string text)
+        {
+            Dictionary<string, int> frequencies = new Dictionary<string, int>();
+            string[] words = Regex.Split(text, @"\W+");
+            foreach (string word in words)
+            {
+                if (frequencies.ContainsKey(word))
+                {
+                    frequencies[word]++;
+                }
+                else
+                {
+                    frequencies[word] = 1;
+                }
+            }
+            Console.WriteLine("word" + frequencies);
+        }
+
+        public CountWord(string s)
+        {
+            string[] words = s.Split(",.' ?\r\n".ToArray());
+            int n = 0;
+            foreach (string word in words)
+            {
+                if (word.Length > 3)
+                {
+                    n++;
+                }
+            }
+            Console.WriteLine("words:" + n);
+        }
+
+    }
+}
