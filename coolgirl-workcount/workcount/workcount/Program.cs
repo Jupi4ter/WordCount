@@ -1,73 +1,256 @@
-﻿using System;
-using System.Text.RegularExpressions;
-using System.IO;
+﻿
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-
-namespace hxhandtcy
+using System.IO;
+using System.Text.RegularExpressions;
+using System.Linq;
+namespace work1
 {
-    class Program
+    public class Deal
     {
-        static void Main(string[] args)
+        public static int getCharCount(string text) // 统计文件字符数(ascll码（32~126），制表符，换行符，)
         {
-            FileInfo file = new FileInfo(@"D:\hxh.txt");
-            StreamReader sw = file.OpenText();
-            //建立空字符串用于接收文件读取的内容
-            string content = "";
-            //记录文件行数
-            int account = 0;
-            //循环读取文件内容
-            while (true)
+            char c;
+            int charNum = 0;
+            for (int i = 0; i < text.Length; i++)
             {
-                //对文件读取内容进行判断，如果不为空用变量接收，行数加一
-                string temp = sw.ReadLine();
-                if (temp != null)
+                c = text[i]; //把字符串转化为字符数组
+                if (c >= (char)32 && c <= (char)126 || c == '\r' || c == '\n' || c == '\t')
                 {
-                    account++;
-                    content += temp;
+                    charNum++;
                 }
-                //为空则停止
-                else
+            }
+            return charNum;
+        }
+        //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
+        //ORIGINAL LINE: public static int getLineCount(String text)throws Exception
+        public static int getLineCount(string text)
+        { // 统计有效行数
+            int lineNum = 0;
+            string[] line = text.Split("\r\n", true); // 将每一行分开放入一个字符串数组
+            for (int i = 0; i < line.Length; i++)
+            { // 找出无效行，统计有效行
+                if (line[i].Trim().Length == 0)
                 {
-                    break;
+                    continue;
+                }
+                lineNum++;
+            }
+            return lineNum;
+        }
+        public static string[] getWords(string text)
+        {
+
+            text = text.Replace('\r', ' ');
+            text = text.Replace('\r', ' ');
+            text = text.Replace('\r', ' ');
+            string[] words = text.Split(" ", true);
+            return words;
+        }
+
+        public static int getWordsNum(string text)
+        {
+
+            string content = text.Replace('\r', ' ');
+            content = text.Replace('\b', ' ');
+            content = text.Replace('\n', ' ');
+            string[] words = content.Split(" ", true);
+            int wordCount = 0;
+            for (int i = 0; i < words.Length; i++)
+            {
+                if (words[i].Length < 4)
+                {
+                    continue;
                 }
 
-            }
-            //关闭文件
-            sw.Close();
-            //列表接收正则匹配到的单词
-            List<string> test = new List<string>();
-            //利用正则进行匹配，以字母开头，可以数字结尾
-            MatchCollection rel = Regex.Matches(content, "([a-zA-ZI'm]*\\w+)");
-            for (int i = 0; i < rel.Count; i++)
-            {
-                //匹配到的单词进入列表
-                test.Add(Convert.ToString(rel[i]));
-            }
-            //利用字典进行单词使用数统计
-            Dictionary<string, int> hot = new Dictionary<string, int>();
-            for (int i = 0; i < test.Count; i++)
-            {
-                if (hot.ContainsKey(test[i]))
+                int j = 0;
+                for (j = 0; j < 4; j++)
                 {
-                    hot[test[i]]++;
+                    char c = words[i][j];
+                    if (!((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')))
+                    {
+                        break;
+                    }
+
                 }
-                else
+
+                if (j == 4)
                 {
-                    hot[test[i]] = 1;
+                    wordCount++;
                 }
             }
-            //对字典内容排序
-            Dictionary<string, int> hot_sort = hot.OrderByDescending(p => p.Value).ToDictionary(p => p.Key, o => o.Value); ;
-            //对字典遍历输出
-            foreach (KeyValuePair<string, int> kvp in hot_sort)
+
+            return wordCount;
+
+        }
+        public static IDictionary<string, int> getWordFreq(string text) // 统计单词词频(单词：以4个英文字母开头，跟上字母数字符号，单词以分隔符分割，不区分大小写。)
+        {
+            Dictionary<string, int> wordFreq = new Dictionary<string, int>();
+
+            string content = text.Replace('\r', ' ');
+            content = text.Replace('\b', ' ');
+            content = text.Replace('\n', ' ');
+
+            string[] words = content.Split(" ", true);
+
+
+            for (int i = 0; i < words.Length; i++)
             {
-                Console.WriteLine("单词为:{0}\t次数为：{1}", kvp.Key, kvp.Value);
+                if (words[i].Length < 4)
+                {
+                    continue;
+                }
+
+                int j = 0;
+                for (j = 0; j < 4; j++)
+                {
+                    char c = words[i][j];
+                    if (!((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')))
+                    {
+                        break;
+                    }
+                }
+                if (j == 4)
+                {
+                    words[i] = words[i].Trim().ToLower(); // 将字符串转化为小写
+                    if (wordFreq[words[i]] == null)
+                    { // 判断之前Map中是否出现过该字符串
+                        wordFreq[words[i]] = 1;
+                    }
+                    else
+                    {
+                        wordFreq[words[i]] = wordFreq[words[i]] + 1;
+                    }
+                }
             }
-            Console.WriteLine("文件行数为：{0}", account);
-            Console.WriteLine("单词总数为:{0}", test.Count);
+            return wordFreq;
         }
     }
+    public class Mainmain
+    {
+
+
+        public static void Main(string[] args)
+        {
+            FileInfo file = new FileInfo(@"D:\hxh.txt");
+            string content = ReadFile.readFileContent(file);
+            Console.WriteLine(content);
+            int charNUM = Deal.getCharCount(content);
+            Console.WriteLine("字符数：" + charNUM);
+            int lineNum = Deal.getLineCount(content);
+            Console.WriteLine("行数：" + lineNum);
+            int wordsNum = Deal.getWordsNum(content);
+            Console.WriteLine("单词数：" + wordsNum);
+
+            IDictionary<string, int> wordFreq = Deal.getWordFreq(content);
+            /*遍历map*/
+            foreach (KeyValuePair<string, int> entry in wordFreq.SetOfKeyValuePairs())
+            {
+                string key = entry.Key;
+                int? value = entry.Value;
+                Console.WriteLine("单词:" + key + ", 数量:" + value);
+            }
+        }
+
+    }
+    internal static class StringHelper
+    {
+
+        public static string SubstringSpecial(this string self, int start, int end)
+        {
+            return self.Substring(start, end - start);
+        }
+        public static bool StartsWith(this string self, string prefix, int toffset)
+        {
+            return self.IndexOf(prefix, toffset, System.StringComparison.Ordinal) == toffset;
+        }
+        public static string[] Split(this string self, string regexDelimiter, bool trimTrailingEmptyStrings)
+        {
+            string[] splitArray = System.Text.RegularExpressions.Regex.Split(self, regexDelimiter);
+
+            if (trimTrailingEmptyStrings)
+            {
+                if (splitArray.Length > 1)
+                {
+                    for (int i = splitArray.Length; i > 0; i--)
+                    {
+                        if (splitArray[i - 1].Length > 0)
+                        {
+                            if (i < splitArray.Length)
+                                System.Array.Resize(ref splitArray, i);
+
+                            break;
+                        }
+                    }
+                }
+            }
+
+            return splitArray;
+        }
+
+        public static string NewString(sbyte[] bytes)
+        {
+            return NewString(bytes, 0, bytes.Length);
+        }
+        public static string NewString(sbyte[] bytes, int index, int count)
+        {
+            return System.Text.Encoding.UTF8.GetString((byte[])(object)bytes, index, count);
+        }
+        public static string NewString(sbyte[] bytes, string encoding)
+        {
+            return NewString(bytes, 0, bytes.Length, encoding);
+        }
+        public static string NewString(sbyte[] bytes, int index, int count, string encoding)
+        {
+            return System.Text.Encoding.GetEncoding(encoding).GetString((byte[])(object)bytes, index, count);
+        }
+
+        public static sbyte[] GetBytes(this string self)
+        {
+            return GetSBytesForEncoding(System.Text.Encoding.UTF8, self);
+        }
+        public static sbyte[] GetBytes(this string self, System.Text.Encoding encoding)
+        {
+            return GetSBytesForEncoding(encoding, self);
+        }
+        public static sbyte[] GetBytes(this string self, string encoding)
+        {
+            return GetSBytesForEncoding(System.Text.Encoding.GetEncoding(encoding), self);
+        }
+        private static sbyte[] GetSBytesForEncoding(System.Text.Encoding encoding, string s)
+        {
+            sbyte[] sbytes = new sbyte[encoding.GetByteCount(s)];
+            encoding.GetBytes(s, 0, s.Length, (byte[])(object)sbytes, 0);
+            return sbytes;
+        }
+    }
+    public class ReadFile
+    {
+
+        public string RF(File file)
+        {
+
+            FileStream fis = new FileStream(file, FileMode.Open, FileAccess.Read);
+            sbyte[] buf = new sbyte[1024];
+            StringBuilder sb = new StringBuilder();
+            while (fis.Read(buf) != -1)
+            {
+                sb.Append(StringHelper.NewString(buf));
+                buf = new sbyte[1024]; // 重新生成，避免和上次读取的数据重复
+            }
+            return sb.ToString();
+
+
+
+        }
+
+        internal static string readFileContent(FileInfo file)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+
 }
 
