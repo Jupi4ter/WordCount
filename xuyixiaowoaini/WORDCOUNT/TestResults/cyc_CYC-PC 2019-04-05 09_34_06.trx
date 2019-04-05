@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="74e103d2-8f4a-4661-b348-1a12ac232c57" name="cyc@CYC-PC 2019-04-05 09:34:06" runUser="cyc-PC\cyc" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="本地" id="8c4e436f-9725-448e-9a17-b02765938e51">
+    <Description>这些设置为本地测试运行的默认测试设置。</Description>
+    <Deployment enabled="false" runDeploymentRoot="cyc_CYC-PC 2019-04-05 09_34_06">
+      <DeploymentItem filename="C:\Users\cyc\Desktop\新建文件夹\WordCount\xuyixiaowoaini\WORDCOUNT\WORDCOUNT\bin\Debug\WORDCOUNT.exe" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2019-04-05T09:34:06.6674292+08:00" queuing="2019-04-05T09:34:07.5174778+08:00" start="2019-04-05T09:34:07.5704809+08:00" finish="2019-04-05T09:34:08.5075345+08:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="MainTest05" storage="c:\users\cyc\desktop\新建文件夹\wordcount\xuyixiaowoaini\wordcount\testwordcount\bin\debug\testwordcount.dll" id="235a4227-7dfb-93f2-4206-8f0cb49a0231">
+      <Execution id="27ecd6b7-b3e6-4969-83a1-651c5f1e0e67" />
+      <TestMethod codeBase="C:/Users/cyc/Desktop/新建文件夹/WordCount/xuyixiaowoaini/WORDCOUNT/TestWORDCOUNT/bin/Debug/TestWORDCOUNT.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestWORDCOUNT.UnitTest1, TestWORDCOUNT, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MainTest05" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="列表中未列出的结果" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="所有已加载的结果" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="235a4227-7dfb-93f2-4206-8f0cb49a0231" executionId="27ecd6b7-b3e6-4969-83a1-651c5f1e0e67" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="27ecd6b7-b3e6-4969-83a1-651c5f1e0e67" testId="235a4227-7dfb-93f2-4206-8f0cb49a0231" testName="MainTest05" computerName="CYC-PC" duration="00:00:00.1698100" startTime="2019-04-05T09:34:07.6194837+08:00" endTime="2019-04-05T09:34:08.4565316+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="27ecd6b7-b3e6-4969-83a1-651c5f1e0e67">
+      <Output>
+        <StdOut>字符总数为：4
+单词总数为：1
+有效行数为：1
+
+词频	单词
+
+1	abcd</StdOut>
+        <ErrorInfo>
+          <Message>Assert.AreEqual 失败。应为: &lt;True&gt;，实际为: &lt;False&gt;。测试用例5</Message>
+          <StackTrace>   在 TestWORDCOUNT.UnitTest1.UnitTest(String test, Result trueres, String reason) 位置 C:\Users\cyc\Desktop\新建文件夹\WordCount\xuyixiaowoaini\WORDCOUNT\TestWORDCOUNT\UnitTest1.cs:行号 177
+   在 TestWORDCOUNT.UnitTest1.MainTest05() 位置 C:\Users\cyc\Desktop\新建文件夹\WordCount\xuyixiaowoaini\WORDCOUNT\TestWORDCOUNT\UnitTest1.cs:行号 85
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

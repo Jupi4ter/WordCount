@@ -8,7 +8,7 @@ using System.Diagnostics;
 
 namespace WORDCOUNT
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -27,7 +27,6 @@ namespace WORDCOUNT
             WordTrie wtrie = new WordTrie();
             Result res = new Result();
 
-            
             io.pathIn = "F:\\Demo.txt";
             io.pathOut = "F:\\Result.txt";
             datanumber = io.Input(datanumber, wtrie);  //按行读取文件并统计
@@ -58,7 +57,7 @@ namespace WORDCOUNT
                     datanumber.Calculate(dataline, wtrie);  //按行统计数据
                 }
             }
-            catch { Console.WriteLine("文档读取失败！"); }
+            catch { Console.WriteLine("wrong！"); }
             finally
             {
                 if (sr != null) { sr.Close(); }
@@ -260,7 +259,7 @@ namespace WORDCOUNT
                 {
                     if (!string.IsNullOrEmpty(word))  //判断是否为词尾后的字符
                     {
-                        if ((word[0] >= 97 && word[0] <= 122) && (word[1] >= 97 && word[1] <= 122) && (word[2] >= 97 && word[2] <= 122) && (word[3] >= 97 && word[3] <= 122)) 
+                        if ((word[0] >= 97 && word[0] <= 122) ) 
                         { 
                             wtrie.Insert(word); 
                         }
@@ -270,7 +269,7 @@ namespace WORDCOUNT
             }
             if (!string.IsNullOrEmpty(word))  
             {
-                if ((word[0] >= 97 && word[0] <= 122) && (word[1] >= 97 && word[1] <= 122) && (word[2] >= 97 && word[2] <= 122) && (word[3] >= 97 && word[3] <= 122)) 
+                if ((word[0] >= 97 && word[0] <= 122) ) 
                 { 
                     wtrie.Insert(word); 
                 }

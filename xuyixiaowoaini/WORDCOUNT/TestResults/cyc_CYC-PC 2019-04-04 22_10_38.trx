@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="8153adc3-9c77-4c3e-97bb-e5414525dac2" name="cyc@CYC-PC 2019-04-04 22:10:38" runUser="cyc-PC\cyc" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="本地" id="8c4e436f-9725-448e-9a17-b02765938e51">
+    <Description>这些设置为本地测试运行的默认测试设置。</Description>
+    <Deployment enabled="false" runDeploymentRoot="cyc_CYC-PC 2019-04-04 22_10_38">
+      <DeploymentItem filename="C:\Users\cyc\Desktop\新建文件夹\WordCount\xuyixiaowoaini\WORDCOUNT\WORDCOUNT\bin\Debug\WORDCOUNT.exe" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2019-04-04T22:10:38.9963633+08:00" queuing="2019-04-04T22:10:39.0343655+08:00" start="2019-04-04T22:10:39.0433660+08:00" finish="2019-04-04T22:10:39.4613899+08:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="MainTest01" storage="c:\users\cyc\desktop\新建文件夹\wordcount\xuyixiaowoaini\wordcount\testwordcount\bin\debug\testwordcount.dll" id="36cb47e3-2662-1533-6bc9-a15608ffa849">
+      <Execution id="ecf7ed46-9778-4476-904b-e244267ed3f3" />
+      <TestMethod codeBase="C:/Users/cyc/Desktop/新建文件夹/WordCount/xuyixiaowoaini/WORDCOUNT/TestWORDCOUNT/bin/Debug/TestWORDCOUNT.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestWORDCOUNT.UnitTest1, TestWORDCOUNT, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MainTest01" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="列表中未列出的结果" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="所有已加载的结果" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="36cb47e3-2662-1533-6bc9-a15608ffa849" executionId="ecf7ed46-9778-4476-904b-e244267ed3f3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="ecf7ed46-9778-4476-904b-e244267ed3f3" testId="36cb47e3-2662-1533-6bc9-a15608ffa849" testName="MainTest01" computerName="CYC-PC" duration="00:00:00.0178364" startTime="2019-04-04T22:10:39.0473662+08:00" endTime="2019-04-04T22:10:39.4433889+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ecf7ed46-9778-4476-904b-e244267ed3f3">
+      <Output>
+        <StdOut>字符总数为：15
+单词总数为：1
+有效行数为：1
+
+词频	单词
+
+1	abcd123</StdOut>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>
