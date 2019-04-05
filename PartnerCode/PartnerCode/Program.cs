@@ -103,18 +103,23 @@ namespace wordCount
         {
             Console.WriteLine("请输入参数：");
             string[] str = Console.ReadLine().Split(" ".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+            if(str.Length%2!=0)
+            {
+                Console.WriteLine("输入的参数为奇数，请注意空格！");
+            }
             TFile F = new TFile(str[1]);
             if (str.Length == 6)
             {
                 if (str[2] == "-m")
                 {
                     Console.WriteLine("characters:" + F.charCount);
-                    Console.WriteLine("words:" + F.wordCount);
+                    Console.WriteLine("words:" + F.Word.Count);
                     Console.WriteLine("lines:" + F.lineCount);
                     int m = Convert.ToInt32(str[3]);
-                    while(m>F.wordlist.Count)
+                    while(m>F.Word.Count)
                     {
-
+                        Console.WriteLine("输入的数字超过文件夹单词数，请重新输入：");
+                        m=int.Parse(Console.ReadLine());
                     }
                     for (int i = 0; i < m; i++)
                     {
@@ -187,11 +192,12 @@ namespace wordCount
                 {
                     int m = Convert.ToInt32(str[3]);
                     Console.WriteLine("characters:"+F.charCount);
-                    Console.WriteLine("words:" + F.wordCount);
+                    Console.WriteLine("words:" + F.Word.Count);
                     Console.WriteLine("lines:" + F.lineCount);
-                    while (m > F.wordlist.Count)
+                    while (m > F.Word.Count)
                     {
-
+                        Console.WriteLine("输入的数字超过文件夹单词数，请重新输入：");
+                        m = int.Parse(Console.ReadLine());
                     }
                     for (int i = 0; i < m; i++)
                     {
@@ -259,10 +265,14 @@ namespace wordCount
                 if (str[4] == "-m")
                 {
                     Console.WriteLine("characters:" + F.charCount);
-                    Console.WriteLine("words:" + F.wordCount);
+                    Console.WriteLine("words:" + F.Word.Count);
                     Console.WriteLine("lines:" + F.lineCount);
-                    string s2 = str[5];
-                    int m = Convert.ToInt32(s2);
+                    int m = Convert.ToInt32(str[3]);
+                    while (m > F.Word.Count)
+                    {
+                        Console.WriteLine("输入的数字超过文件夹单词数，请重新输入：");
+                        m = int.Parse(Console.ReadLine());
+                    }
                     string[] temp = (string[])F.Word.GetKeyList();
                     for (int i = 0; i < m; i++)
                     {
