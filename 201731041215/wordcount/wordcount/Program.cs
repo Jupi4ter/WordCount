@@ -43,6 +43,20 @@ namespace WY
             {
                 Function f = new Function(command["-i"]);
                 f.ToFile(command["-o"]);
+                if (command.ContainsKey("-n"))
+                {
+                    int nums = Convert.ToInt32(command["-n"]);
+                    f.Cut(nums);
+                    if (command.ContainsKey("-m"))
+                    {
+                        int length = Convert.ToInt32(command["-m"]);
+                        f.PutN(length);
+                    }
+                }
+                else
+                {
+
+                }
             }
             else
             {

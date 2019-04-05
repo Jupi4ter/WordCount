@@ -129,13 +129,62 @@ namespace WY
             //{
             //    sw.WriteLine("{0,-10}:{1,-3}", kvp.Key, kvp.Value);
             //}
+            string temp = "";
             foreach (KeyValuePair<string, int> kvp in this.words_sort)
             {
-                sw.WriteLine("{0,-10}:{1,-3}", kvp.Key, kvp.Value);
+                temp += kvp.Key;
+                temp += " : ";
+                temp += kvp.Value;
+                temp += "\n";
+                //sw.WriteLine("{0,-10}:{1,-3}", kvp.Key, kvp.Value);
             }
+            sw.Write(temp);
             //关闭文件
             sw.Close();
             Console.WriteLine("结果文件保存于:{0}", filepath);
-        }        
+        }
+        //输出频率最高的前n个单词
+        public void Cut(int n)
+        {
+            //存储前n单词
+            List<string> list = new List<string>();
+            foreach (KeyValuePair<string, int> kvp in this.words_sort)
+            {
+                list.Add(kvp.Key + ":" + kvp.Value);
+            }
+            for (int m = 0; m < n; m++)
+            {
+                Console.WriteLine(list[m]);
+            }
+        }
+        //输出指定长度的词组
+        public void PutN(int m)
+        {
+            Console.WriteLine("------");
+            List<string> list = new List<string>();
+            Dictionary<string, int> Words = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
+            //建立空字符串用于接收新的词组
+            string str = "";
+            for (int i = 0; i <= result.Count - m; i++)
+            {
+                int j;
+                for (str = result[i], j = 0; j < m - 1; j++)
+                {
+                    str += "  " + result[i + j + 1];
+                }
+                if (Words.ContainsKey(str))
+                {
+                    Words[str]++;
+                }
+                else
+                    Words[str] = 1;
+            }
+            //对字典内容排序
+            Dictionary<string, int> Words_sort = Words.OrderByDescending(p => p.Value).ThenBy(o => o.Key).ToDictionary(p => p.Key, o => o.Value);
+            foreach (KeyValuePair<string, int> kvp in Words_sort)
+            {
+                Console.WriteLine("词组为:{0}\t次数为：{1}", kvp.Key, kvp.Value);
+            }
+        }
     }
 }
