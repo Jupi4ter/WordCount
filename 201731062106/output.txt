@@ -1,3 +1,6 @@
-characters: 8
-words:0
-lines:1
+characters: 51
+words:3
+lines:2
+abcd123:1
+windoms123:1
+windoms456:1

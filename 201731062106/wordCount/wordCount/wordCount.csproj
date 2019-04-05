@@ -36,6 +36,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\ClassLibrary1\ClassLibrary1\bin\Debug\netstandard1.4\ClassLibrary1.dll</HintPath>
     </Reference>
+    <Reference Include="ClassLibrary2">
+      <HintPath>..\..\ClassLibrary2\ClassLibrary2\bin\Debug\netstandard1.4\ClassLibrary2.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Init.cs" />
+    <Compile Include="New.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

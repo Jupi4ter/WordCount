@@ -21,12 +21,6 @@ namespace ClassLibrary1
             str = strList.ToArray();      //将LIST转换成string[]
             var temp1 = str.GroupBy(i => i).ToList();
             string temp = "";
-            //temp1.ForEach(i =>
-            //{
-            //    string wordi = i.Key;
-            //    int timei = i.Count();
-            //    temp += wordi + ":" + timei + "\r\n";
-            //});
             foreach (var i in temp1)
             {
                 string wordi = i.Key;
