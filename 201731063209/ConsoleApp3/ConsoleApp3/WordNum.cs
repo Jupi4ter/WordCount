@@ -10,21 +10,21 @@ namespace WordCounts
 {
     class WordNum
     {
-        Dictionary<string, int> wordOccNum = new Dictionary<string, int>();
+        Dictionary<string, int> wordOccNum = new Dictionary<string, int>();//建立字典
         public int getWordCount(string FilePath)
         {
             int wordCount = 0;
             String line;
-            StreamReader sr = new StreamReader(FilePath, Encoding.Default);
+            StreamReader sr = new StreamReader(FilePath, Encoding.Default);//从文件中读取单词
             while ((line = sr.ReadLine()) != null)
             {
                 string[] words = line.ToLower().Split(' ');
                 foreach (string str in words)
                 {
                     char[] cc = str.ToCharArray();
-                    if (cc.Length > 4)
+                    if (cc.Length > 4)//要求以4个字开头，所以长度要大于4
                     {
-                        if (cc[0] >= 97 && cc[0] <= 122
+                        if (cc[0] >= 97 && cc[0] <= 122//判断前4个是不是字母
                             && cc[1] >= 97 && cc[1] <= 122
                             && cc[2] >= 97 && cc[2] <= 122
                             && cc[3] >= 97 && cc[3] <= 122)
@@ -32,7 +32,7 @@ namespace WordCounts
 
                             if (wordOccNum.ContainsKey(str))
                             {
-                                wordOccNum[str]++;
+                                wordOccNum[str]++;//有，把个数拿出来+1 没有就把单词放里面 个数为1
                             }
                             else
                             {
@@ -109,14 +109,14 @@ namespace WordCounts
             Dictionary<string, int> returnDict = new Dictionary<string, int>();
             //按个数降序排列
             Dictionary<string, int> tempOrder = wordOccNum.OrderByDescending(o => o.Value).ToDictionary(p => p.Key, o => o.Value);
-            //l临时转换用
+            //临时转换用
             Dictionary<string, int> temp = new Dictionary<string, int>();
             int lastValue = 0;
             //循环降序排列的单词列表
             foreach (KeyValuePair<string, int> kvp in tempOrder)
             {
                 //只有在个数相同的时候才进行单词名称排序
-                //判断临时用字典表是不是空 ， 空的就把当前人单词和个数放进去
+                //判断临时用字典表是不是空 ， 空的就把当前单词和个数放进去
                 if (temp.Count == 0)
                 {
                     temp.Add(kvp.Key, kvp.Value);
@@ -132,7 +132,7 @@ namespace WordCounts
                     temp.OrderByDescending(p => p.Key).ToList().ForEach(x => returnDict.Add(x.Key, x.Value));
                     temp.Clear();//清空
                     temp.Add(kvp.Key, kvp.Value);//把当前的放进去
-                    lastValue = kvp.Value;//记录一下这次人单词个数  用于后面判断
+                    lastValue = kvp.Value;//记录一下这次单词个数  用于后面判断
                 }
             }
             //循环跳出时临时字典里还有  就再处理一下  清空  防止数据忘记处理
