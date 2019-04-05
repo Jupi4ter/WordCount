@@ -1,0 +1,17 @@
+characters:347
+words: 32
+lines:9
+< link1234 >: 6
+< link123 >: 6
+< link >: 6
+< advice >: 5
+< windows2000 >: 3
+< windows19 >: 3
+< windows17 >: 3
+< ddbbd >: 1
+< asepd >: 1
+< afaf1234 >: 1
+< advaf >: 1
+< adddghj >: 1
+< achaocalculator >: 1
+< accd >: 1
