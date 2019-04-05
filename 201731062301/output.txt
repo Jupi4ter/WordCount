@@ -1,0 +1,10 @@
+Characters:39
+Lines: 3
+Words:5
+输出频率前2的词组：
+asss:1
+Friday:1
+输出长度为3的词组：
+Monday Tuesday Wednesday:1
+Tuesday Wednesday Friday:1
+Wednesday Friday asss:1
