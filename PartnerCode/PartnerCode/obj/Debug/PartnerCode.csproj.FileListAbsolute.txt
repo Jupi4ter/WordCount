@@ -1,0 +1,12 @@
+C:\Users\llll\source\repos\PartnerCode\PartnerCode\bin\Debug\PartnerCode.exe.config
+C:\Users\llll\source\repos\PartnerCode\PartnerCode\bin\Debug\PartnerCode.exe
+C:\Users\llll\source\repos\PartnerCode\PartnerCode\bin\Debug\PartnerCode.pdb
+C:\Users\llll\source\repos\PartnerCode\PartnerCode\bin\Debug\CharCount.dll
+C:\Users\llll\source\repos\PartnerCode\PartnerCode\bin\Debug\WordGet.dll
+C:\Users\llll\source\repos\PartnerCode\PartnerCode\bin\Debug\CharCount.pdb
+C:\Users\llll\source\repos\PartnerCode\PartnerCode\bin\Debug\WordGet.pdb
+C:\Users\llll\source\repos\PartnerCode\PartnerCode\obj\Debug\PartnerCode.csproj.CoreCompileInputs.cache
+C:\Users\llll\source\repos\PartnerCode\PartnerCode\obj\Debug\PartnerCode.csproj.CopyComplete
+C:\Users\llll\source\repos\PartnerCode\PartnerCode\obj\Debug\PartnerCode.exe
+C:\Users\llll\source\repos\PartnerCode\PartnerCode\obj\Debug\PartnerCode.pdb
+C:\Users\llll\source\repos\PartnerCode\PartnerCode\obj\Debug\PartnerCode.csprojAssemblyReference.cache
