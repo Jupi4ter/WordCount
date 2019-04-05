@@ -15,13 +15,13 @@ using System.Text.RegularExpressions;
 namespace Beta1
 {
     //Inherit the interface of each component
-    public interface IWordCount : ICountAscii, ICountWord, ICountLineAndCharacters, IOutputWord, IPrintResult
+    public interface IWordCount : ICountAscii, ICountWord, IOutputWord, IPrintResult
     {
 
     }
 
     //Inherit all interfaces
-    class WordCount : IWordCount
+    class version1 : IWordCount
     {
         public int CountAscii(string txtPathString)
         {
@@ -112,79 +112,7 @@ namespace Beta1
             return effectiveRowNumber;
         }
 
-        public Dictionary<string, int> LengthDeterminingPhrases(string txtPathString, int number)
-        {
-            //Determine whether characters are legal
-            if (!File.Exists(txtPathString))
-            {
-                Console.WriteLine("文件不存在！");
-                return null;
-            }
-            string txt = File.ReadAllText(txtPathString);
-
-            //Remove non-numeric and non-alphabetic symbols
-            string[] txtString = Regex.Split(txt, @"[^a-z|^A-Z|^0-9]", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
-
-            //Remove empty strings from string arrays
-            string[] txtS = txtString.Where(s => !string.IsNullOrEmpty(s)).ToArray();
-
-            Dictionary<string, int> pharases = new Dictionary<string, int>();
-
-            List<string> wordPhrases = new List<string>();
-
-            try
-            {
-                if (number <= txtS.Length)
-                {
-                    //By four strings per cycle , To determine whether it is a  phrase or not
-                    for (int i = 0; i < txtS.Length - number + 1; i++)
-                    {
-
-                        List<string> words = new List<string>();
-                        for (int j = 0; j < number; j++)
-                        {
-                            words.Add(txtS[i + j]);
-                        }
-                        string temp = null;
-                        int count = 0;
-                        foreach (string word in words)
-                        {
-                            //Judge whether it's a word or not
-                            if (word.Length >= 4 && Regex.IsMatch(word.Substring(0, 4), @"^[A-Za-z]{4}$"))
-                            {
-                                temp += word + " ";
-                                count++;
-                                continue;
-                            }
-                            else break;
-                        }
-                        if (count == number) wordPhrases.Add(temp);
-                    }
-
-                    //Create an array of de - duplicated strings
-                    List<string> wordPhrasesDelete = wordPhrases.Distinct().ToList();
-
-                    //Indexing the Number of Corresponding Phrases in the Primary Array by Deduplicated String Array
-                    foreach (string wordDelete in wordPhrasesDelete)
-                    {
-                        int count = 0;
-                        foreach (string wordPhrase in wordPhrases)
-                        {
-                            if (wordDelete == wordPhrase) count++;
-                        }
-                        pharases.Add(wordDelete, count);
-                    }
-
-                    return pharases;
-                }
-                else return null;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                return null;
-            }
-        }
+        
 
         public int CountWord(string filePath)
         {
@@ -422,19 +350,96 @@ namespace Beta1
         }
     }
 
+    class version2 : version1, ILengthDeterminingPhrases
+    {
+
+        public Dictionary<string, int> LengthDeterminingPhrases(string txtPathString, int number)
+        {
+            //Determine whether characters are legal
+            if (!File.Exists(txtPathString))
+            {
+                Console.WriteLine("文件不存在！");
+                return null;
+            }
+            string txt = File.ReadAllText(txtPathString);
+
+            //Remove non-numeric and non-alphabetic symbols
+            string[] txtString = Regex.Split(txt, @"[^a-z|^A-Z|^0-9]", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+
+            //Remove empty strings from string arrays
+            string[] txtS = txtString.Where(s => !string.IsNullOrEmpty(s)).ToArray();
+
+            Dictionary<string, int> pharases = new Dictionary<string, int>();
+
+            List<string> wordPhrases = new List<string>();
+
+            try
+            {
+                if (number <= txtS.Length)
+                {
+                    //By four strings per cycle , To determine whether it is a  phrase or not
+                    for (int i = 0; i < txtS.Length - number + 1; i++)
+                    {
+
+                        List<string> words = new List<string>();
+                        for (int j = 0; j < number; j++)
+                        {
+                            words.Add(txtS[i + j]);
+                        }
+                        string temp = null;
+                        int count = 0;
+                        foreach (string word in words)
+                        {
+                            //Judge whether it's a word or not
+                            if (word.Length >= 4 && Regex.IsMatch(word.Substring(0, 4), @"^[A-Za-z]{4}$"))
+                            {
+                                temp += word + " ";
+                                count++;
+                                continue;
+                            }
+                            else break;
+                        }
+                        if (count == number) wordPhrases.Add(temp);
+                    }
+
+                    //Create an array of de - duplicated strings
+                    List<string> wordPhrasesDelete = wordPhrases.Distinct().ToList();
+
+                    //Indexing the Number of Corresponding Phrases in the Primary Array by Deduplicated String Array
+                    foreach (string wordDelete in wordPhrasesDelete)
+                    {
+                        int count = 0;
+                        foreach (string wordPhrase in wordPhrases)
+                        {
+                            if (wordDelete == wordPhrase) count++;
+                        }
+                        pharases.Add(wordDelete, count);
+                    }
+
+                    return pharases;
+                }
+                else return null;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+        }
+    }
 
     class Program
     {
         static void Main(string[] args)
         {
-            WordCount wc = new WordCount();
-
+           
+            version2 v2 = new version2();
 
             string inputTxtPath = @"C:\Users\Administrator.WIN-4K5HDJFV5BS\Desktop\软件工程作业\WordCount\201731072323\test.txt";
             string OutputTxtPath = @"C:\Users\Administrator.WIN-4K5HDJFV5BS\Desktop\软件工程作业\WordCount\201731072323\save.txt";
             
             //Print result
-            wc.PrintWord(wc.CountAscii(inputTxtPath), wc.CountWord(inputTxtPath), wc.CountLine(inputTxtPath), wc.OutputWord(inputTxtPath, 5), wc.LengthDeterminingPhrases(inputTxtPath, 2), OutputTxtPath);
+            v2.PrintWord(v2.CountAscii(inputTxtPath), v2.CountWord(inputTxtPath), v2.CountLine(inputTxtPath), v2.OutputWord(inputTxtPath, 5), v2.LengthDeterminingPhrases(inputTxtPath, 2), OutputTxtPath);
 
             Console.ReadKey();
         }
