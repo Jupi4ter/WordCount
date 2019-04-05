@@ -1,0 +1,7 @@
+C:\Users\cyc\Desktop\新建文件夹\WordCount\xuyixiaowoaini\WORDCOUNT\TestWORDCOUNT\bin\Debug\TestWORDCOUNT.dll
+C:\Users\cyc\Desktop\新建文件夹\WordCount\xuyixiaowoaini\WORDCOUNT\TestWORDCOUNT\bin\Debug\TestWORDCOUNT.pdb
+C:\Users\cyc\Desktop\新建文件夹\WordCount\xuyixiaowoaini\WORDCOUNT\TestWORDCOUNT\bin\Debug\WORDCOUNT.exe
+C:\Users\cyc\Desktop\新建文件夹\WordCount\xuyixiaowoaini\WORDCOUNT\TestWORDCOUNT\bin\Debug\WORDCOUNT.pdb
+C:\Users\cyc\Desktop\新建文件夹\WordCount\xuyixiaowoaini\WORDCOUNT\TestWORDCOUNT\obj\Debug\TestWORDCOUNT.csprojResolveAssemblyReference.cache
+C:\Users\cyc\Desktop\新建文件夹\WordCount\xuyixiaowoaini\WORDCOUNT\TestWORDCOUNT\obj\Debug\TestWORDCOUNT.dll
+C:\Users\cyc\Desktop\新建文件夹\WordCount\xuyixiaowoaini\WORDCOUNT\TestWORDCOUNT\obj\Debug\TestWORDCOUNT.pdb
