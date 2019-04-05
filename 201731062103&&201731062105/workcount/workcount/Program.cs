@@ -23,8 +23,7 @@ namespace work1
             }
             return charNum;
         }
-        //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in .NET:
-        //ORIGINAL LINE: public static int getLineCount(String text)throws Exception
+       
         public static int getLineCount(string text)
         { // 统计有效行数
             int lineNum = 0;
@@ -51,7 +50,6 @@ namespace work1
 
         public static int getWordsNum(string text)
         {
-
             string content = text.Replace('\r', ' ');
             content = text.Replace('\b', ' ');
             content = text.Replace('\n', ' ');
@@ -72,17 +70,13 @@ namespace work1
                     {
                         break;
                     }
-
                 }
-
                 if (j == 4)
                 {
                     wordCount++;
                 }
             }
-
             return wordCount;
-
         }
         public static IDictionary<string, int> getWordFreq(string text) // 统计单词词频(单词：以4个英文字母开头，跟上字母数字符号，单词以分隔符分割，不区分大小写。)
         {
@@ -91,17 +85,13 @@ namespace work1
             string content = text.Replace('\r', ' ');
             content = text.Replace('\b', ' ');
             content = text.Replace('\n', ' ');
-
             string[] words = content.Split(" ", true);
-
-
             for (int i = 0; i < words.Length; i++)
             {
                 if (words[i].Length < 4)
                 {
                     continue;
                 }
-
                 int j = 0;
                 for (j = 0; j < 4; j++)
                 {
