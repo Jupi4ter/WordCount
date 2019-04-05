@@ -45,7 +45,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="WordCount">
-      <HintPath>..\..\Partener_Work\Partener_Work\bin\Debug\WordCount.dll</HintPath>
+      <HintPath>..\..\WordCount\WordCount\bin\Debug\WordCount.dll</HintPath>
     </Reference>
     <Reference Include="WordGet">
       <HintPath>..\..\WordGet\WordGet\bin\Debug\WordGet.dll</HintPath>

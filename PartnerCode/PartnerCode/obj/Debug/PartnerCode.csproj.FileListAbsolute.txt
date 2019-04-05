@@ -9,4 +9,8 @@ C:\Users\llll\source\repos\PartnerCode\PartnerCode\obj\Debug\PartnerCode.csproj.
 C:\Users\llll\source\repos\PartnerCode\PartnerCode\obj\Debug\PartnerCode.csproj.CopyComplete
 C:\Users\llll\source\repos\PartnerCode\PartnerCode\obj\Debug\PartnerCode.exe
 C:\Users\llll\source\repos\PartnerCode\PartnerCode\obj\Debug\PartnerCode.pdb
+C:\Users\llll\source\repos\PartnerCode\PartnerCode\bin\Debug\WordCount.dll
+C:\Users\llll\source\repos\PartnerCode\PartnerCode\bin\Debug\WordCount.pdb
+C:\Users\llll\source\repos\PartnerCode\PartnerCode\bin\Debug\PartnerCode.exe.CodeAnalysisLog.xml
+C:\Users\llll\source\repos\PartnerCode\PartnerCode\bin\Debug\PartnerCode.exe.lastcodeanalysissucceeded
 C:\Users\llll\source\repos\PartnerCode\PartnerCode\obj\Debug\PartnerCode.csprojAssemblyReference.cache

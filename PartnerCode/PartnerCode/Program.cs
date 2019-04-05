@@ -70,7 +70,7 @@ namespace wordCount
         {
             Console.WriteLine("characters:" + charCount);
             Console.WriteLine("wordCount:" + wordCount);
-            Console.WriteLine("lines", this.lineCount);
+            Console.WriteLine("lines" +lineCount);
             string[][] a = new string[20][];
             foreach (string str in Word.GetKeyList())
             {
