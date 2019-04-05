@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace WY
 {
-    class Function
+    public class Function
     {
         //定义整型变量记录行数
         int account = 0;
