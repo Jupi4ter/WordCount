@@ -1,0 +1,13 @@
+
+
+characters:155
+validline:3
+countwords:15
+toptenwords:
+
+gggg (3)
+abcd2 (2)
+abcd3 (2)
+Adgdg (1)
+jhufd (1)
+

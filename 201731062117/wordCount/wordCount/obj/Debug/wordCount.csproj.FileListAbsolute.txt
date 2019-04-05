@@ -1,0 +1,7 @@
+C:\Users\24554\Desktop\第三次作业\201731062117\wordCount\wordCount\bin\Debug\wordCount.exe.config
+C:\Users\24554\Desktop\第三次作业\201731062117\wordCount\wordCount\bin\Debug\wordCount.exe
+C:\Users\24554\Desktop\第三次作业\201731062117\wordCount\wordCount\bin\Debug\wordCount.pdb
+C:\Users\24554\Desktop\第三次作业\201731062117\wordCount\wordCount\obj\Debug\wordCount.csprojAssemblyReference.cache
+C:\Users\24554\Desktop\第三次作业\201731062117\wordCount\wordCount\obj\Debug\wordCount.csproj.CoreCompileInputs.cache
+C:\Users\24554\Desktop\第三次作业\201731062117\wordCount\wordCount\obj\Debug\wordCount.exe
+C:\Users\24554\Desktop\第三次作业\201731062117\wordCount\wordCount\obj\Debug\wordCount.pdb
