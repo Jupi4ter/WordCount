@@ -1,0 +1,7 @@
+C:\Users\95388\Desktop\C#\WordCount\UnitTestWordCount\bin\Debug\UnitTestWordCount.dll
+C:\Users\95388\Desktop\C#\WordCount\UnitTestWordCount\bin\Debug\UnitTestWordCount.pdb
+C:\Users\95388\Desktop\C#\WordCount\UnitTestWordCount\obj\Debug\UnitTestWordCount.csprojResolveAssemblyReference.cache
+C:\Users\95388\Desktop\C#\WordCount\UnitTestWordCount\obj\Debug\UnitTestWordCount.dll
+C:\Users\95388\Desktop\C#\WordCount\UnitTestWordCount\obj\Debug\UnitTestWordCount.pdb
+C:\Users\95388\Desktop\C#\WordCount\UnitTestWordCount\bin\Debug\WordCount.exe
+C:\Users\95388\Desktop\C#\WordCount\UnitTestWordCount\bin\Debug\WordCount.pdb
