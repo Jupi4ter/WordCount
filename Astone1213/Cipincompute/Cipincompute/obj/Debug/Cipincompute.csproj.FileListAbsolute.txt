@@ -1,0 +1,9 @@
+F:\vs\github\WordCount\Astone1213\Cipincompute\Cipincompute\obj\Debug\Cipincompute.csprojAssemblyReference.cache
+F:\vs\github\WordCount\Astone1213\Cipincompute\Cipincompute\obj\Debug\Cipincompute.csproj.CoreCompileInputs.cache
+F:\vs\github\WordCount\Astone1213\Cipincompute\Cipincompute\bin\Debug\Cipincompute.exe.config
+F:\vs\github\WordCount\Astone1213\Cipincompute\Cipincompute\bin\Debug\Cipincompute.exe
+F:\vs\github\WordCount\Astone1213\Cipincompute\Cipincompute\bin\Debug\Cipincompute.pdb
+F:\vs\github\WordCount\Astone1213\Cipincompute\Cipincompute\obj\Debug\Cipincompute.exe
+F:\vs\github\WordCount\Astone1213\Cipincompute\Cipincompute\obj\Debug\Cipincompute.pdb
+F:\vs\github\WordCount\Astone1213\Cipincompute\Cipincompute\obj\Debug\Cipincompute.Properties.Resources.resources
+F:\vs\github\WordCount\Astone1213\Cipincompute\Cipincompute\obj\Debug\Cipincompute.csproj.GenerateResource.cache
