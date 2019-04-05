@@ -1,0 +1,13 @@
+characters:1140
+words:122
+lines:13
+chinese ,频率:6
+more ,频率:4
+different ,频率:3
+language ,频率:3
+them ,频率:3
+there ,频率:3
+they ,频率:3
+foreigners ,频率:2
+history ,频率:2
+learn ,频率:2
