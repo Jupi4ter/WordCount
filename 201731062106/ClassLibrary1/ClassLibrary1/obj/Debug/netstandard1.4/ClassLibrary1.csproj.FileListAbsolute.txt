@@ -1,0 +1,7 @@
+E:\3\git\second\WordCount\201731062106\ClassLibrary1\ClassLibrary1\bin\Debug\netstandard1.4\ClassLibrary1.deps.json
+E:\3\git\second\WordCount\201731062106\ClassLibrary1\ClassLibrary1\bin\Debug\netstandard1.4\ClassLibrary1.dll
+E:\3\git\second\WordCount\201731062106\ClassLibrary1\ClassLibrary1\bin\Debug\netstandard1.4\ClassLibrary1.pdb
+E:\3\git\second\WordCount\201731062106\ClassLibrary1\ClassLibrary1\obj\Debug\netstandard1.4\ClassLibrary1.csproj.CoreCompileInputs.cache
+E:\3\git\second\WordCount\201731062106\ClassLibrary1\ClassLibrary1\obj\Debug\netstandard1.4\ClassLibrary1.AssemblyInfo.cs
+E:\3\git\second\WordCount\201731062106\ClassLibrary1\ClassLibrary1\obj\Debug\netstandard1.4\ClassLibrary1.dll
+E:\3\git\second\WordCount\201731062106\ClassLibrary1\ClassLibrary1\obj\Debug\netstandard1.4\ClassLibrary1.pdb
