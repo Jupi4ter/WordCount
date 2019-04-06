@@ -9,13 +9,16 @@ using wordcount.function;
 
 namespace wordcount.function
 {
-    class asccount
+   public class asccount
     {
-        public static int agefile()//打开文件并统计字符个数
+        public static int asccounts()//打开文件并统计字符个数
         {
             string str = File.ReadAllText(@path.s);
             int num = Regex.Matches(str, @".").Count;
-            return num +linescount.lines() - 1;
+            if (linescount.lines() == 0)
+                return num + linescount.lines();
+            else
+                return num + linescount.lines() - 1;
         }
     }
 }

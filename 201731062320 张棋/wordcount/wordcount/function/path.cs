@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace wordcount.function
 {
-    class path
+   public class path
     {
         public static string s;
+        public static string outputpath;
     }
 }

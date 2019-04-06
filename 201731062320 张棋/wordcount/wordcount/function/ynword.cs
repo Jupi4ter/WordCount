@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace wordcount.function
 {
-    class ynword
+   public class ynword
     {
         public static string[] ynword1(string[] words,ref int w)
         {
-            char[] newword = new char[words.Length];
+            char[] newword = new char[1000];
             int k = 0;
             string[] newwords = new string[words.Length];
             for (int i = 0; i < words.Length; i++)

@@ -8,11 +8,13 @@ using System.Threading.Tasks;
 
 namespace wordcount.function
 {
-    class wordcount
+   
+    public class wordcount
     {
+     
         public  static int sum1(Dictionary<string, int> dic1Asc)
         {
-            StreamWriter sw1 = new StreamWriter(@"D:\xe.txt");
+            StreamWriter sw1 = new StreamWriter(@path.outputpath);
             int sum = 0;
             foreach (KeyValuePair<string, int> entry in dic1Asc)
             {
@@ -52,6 +54,8 @@ namespace wordcount.function
                     frequencies[word] = 1;
                 }
             }
+           
+               
             return frequencies;
         }
     }
