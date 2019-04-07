@@ -14,11 +14,14 @@ namespace wordcount.function.Tests
         [TestMethod()]
         public void ynword1Test()
         {
-            string[] words = { "123", "word1","word2" };
-            int o = 0;
-           string [] test= ynword.ynword1(words, ref o);
-            string[] newword = { "word1","word2" };
-            Assert.AreEqual(newword, ynword.ynword1(words, ref o));
+
+
+            string[] n = { "word1" };
+            string[] newword = { "word1" };
+            int w = 1;
+            string[] test = ynword.ynword1(n, ref w);
+            
+            Assert.AreEqual(newword,test );
            // Assert.Fail();
         }
     }
