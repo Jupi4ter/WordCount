@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.489
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutputWorddll", "OutputWorddll\OutputWorddll.csproj", "{2348DDA6-7226-40CF-B372-2044A8260460}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutputWorddllTests", "OutputWorddllTests\OutputWorddllTests.csproj", "{867B1FC7-890C-455A-BB31-2F253DBF4175}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2348DDA6-7226-40CF-B372-2044A8260460}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2348DDA6-7226-40CF-B372-2044A8260460}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2348DDA6-7226-40CF-B372-2044A8260460}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2348DDA6-7226-40CF-B372-2044A8260460}.Release|Any CPU.Build.0 = Release|Any CPU
+		{867B1FC7-890C-455A-BB31-2F253DBF4175}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{867B1FC7-890C-455A-BB31-2F253DBF4175}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{867B1FC7-890C-455A-BB31-2F253DBF4175}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{867B1FC7-890C-455A-BB31-2F253DBF4175}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6FA156D0-EB60-4A4A-B665-D06242BA3D69}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.489
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountWorddll", "CountWorddll\CountWorddll.csproj", "{F29B1D4F-C006-4B71-9BEB-A6225BE01030}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountWorddllTests1", "CountWorddllTests1\CountWorddllTests1.csproj", "{A592336B-2F14-485F-B95D-6971CCF4BCFA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F29B1D4F-C006-4B71-9BEB-A6225BE01030}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F29B1D4F-C006-4B71-9BEB-A6225BE01030}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F29B1D4F-C006-4B71-9BEB-A6225BE01030}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F29B1D4F-C006-4B71-9BEB-A6225BE01030}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A592336B-2F14-485F-B95D-6971CCF4BCFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A592336B-2F14-485F-B95D-6971CCF4BCFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A592336B-2F14-485F-B95D-6971CCF4BCFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A592336B-2F14-485F-B95D-6971CCF4BCFA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4BC09074-5507-41B2-B106-FFA657723195}
+	EndGlobalSection
+EndGlobal
